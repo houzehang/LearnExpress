@@ -8,11 +8,24 @@ app.engine('handlebars',handlebars.engine);
 app.set('view engine','handlebars');
 
 app.set('port',process.env.PORT || 3100);
+
+////======== 测试选项 ========
+app.use(function(req,res,next){
+	res.locals.showTests = app.get('env') !== 'production' && req.query.test === '1';
+	next();
+});
 app.use(express.static(__dirname + '/public'));
+
+
+////======================== 路由相关 ========================
+
+
+////======== 主页 ========
 app.get('/',function(req,res){
 	res.render('home');
 });
 
+////======== 关于 ========
 app.get('/about',function (req,res) {
 	res.render('about',{fortune:fortune.getFortune()});
 });

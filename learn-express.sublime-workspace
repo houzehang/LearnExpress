@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"ti",
+				"title"
+			],
+			[
+				"rq",
+				"require"
+			],
+			[
+				"POR",
+				"port"
+			],
+			[
 				"lo",
 				"location"
 			],
@@ -502,23 +514,61 @@
 			[
 				"ms",
 				"msgRe"
-			],
-			[
-				"remove",
-				"removeXzwp"
-			],
-			[
-				"jnf",
-				"jnfw"
-			],
-			[
-				"wp",
-				"wpcz"
 			]
 		]
 	},
 	"buffers":
 	[
+		{
+			"file": "index.js",
+			"settings":
+			{
+				"buffer_size": 1247,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/E/SanXiaoServer/SanXiaoServer/tester-web/public/index.html",
+			"settings":
+			{
+				"buffer_size": 3658,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "Searching 1510 files for \"tests-global\"\n\nD:\\LearnExpress\\views\\layouts\\main.handlebars:\n   20  			var assert = chai.assert;\n   21  		</script>\n   22: 		<script src=\"/qa/tests-global.js\"></script>\n   23  		{{#if pageTestScript}}\n   24  			<script src=\"{{pageTestScript}}\"></script>\n\n1 match in 1 file\n",
+			"settings":
+			{
+				"buffer_size": 300,
+				"line_ending": "Windows",
+				"name": "Find Results",
+				"scratch": true
+			}
+		},
+		{
+			"file": "views/layouts/main.handlebars",
+			"settings":
+			{
+				"buffer_size": 711,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "public/vendor/mocha.js",
+			"settings":
+			{
+				"buffer_size": 486822,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/qa/tests-global.js",
+			"settings":
+			{
+				"buffer_size": 168,
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -568,10 +618,26 @@
 	},
 	"expanded_folders":
 	[
-		"/D/LearnExpress"
+		"/D/LearnExpress",
+		"/D/LearnExpress/lib",
+		"/D/LearnExpress/public",
+		"/D/LearnExpress/public/vendor",
+		"/D/LearnExpress/views",
+		"/D/LearnExpress/views/layouts"
 	],
 	"file_history":
 	[
+		"/D/sxjj/webrun/index.html",
+		"/D/LearnExpress/package.json",
+		"/D/LearnExpress/views/about.handlebars",
+		"/D/LearnExpress/index.js",
+		"/D/LearnExpress/lib/fortune.js",
+		"/D/LearnExpress/views/500.handlebars",
+		"/D/LearnExpress/views/404.handlebars",
+		"/D/LearnExpress/views/layouts/main.handlebars",
+		"/D/LearnExpress/views/home.handlebars",
+		"/D/LearnExpress/learn-express.sublime-project",
+		"/D/LearnExpress/.gitignore",
 		"/D/Boilerplate/html5-boilerplate_v6.0.1/index.html",
 		"/D/Boilerplate/html5-boilerplate_v6.0.1/js/plugins.js",
 		"/C/Users/lenovo/Desktop/test.js",
@@ -688,22 +754,11 @@
 		"/D/testvue/xuezike/src/main.js",
 		"/D/vue-resource/test/data/valid.json",
 		"/D/vue-resource/test/http.js",
-		"/D/testvue/xuezike/src/App.vue",
-		"/D/testvue/xuezike/src/router/index.js",
-		"/D/testvue/xuezike/server/api/userApi.js",
-		"/D/vue-resource/src/util.js",
-		"/D/vue-resource/src/http/index.js",
-		"/D/vue-resource/src/url/index.js",
-		"/D/vue-resource/src/resource.js",
-		"/D/vue-resource/src/index.js",
-		"/D/testvue/xuezike/node_modules/bn.js/lib/bn.js",
-		"/D/testvue/xuezike/node_modules/big.js/big.js",
-		"/D/testvue/xuezike/build/webpack.base.conf.js",
-		"/D/testvue/xuezike/server/index.js"
+		"/D/testvue/xuezike/src/App.vue"
 	],
 	"find":
 	{
-		"height": 37.0
+		"height": 43.0
 	},
 	"find_in_files":
 	{
@@ -745,6 +800,15 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"invalid",
+			"suite",
+			"suit",
+			"tests-global",
+			"========",
+			"getFortune",
+			"conquer",
+			"about",
+			"home",
 			"list",
 			"double",
 			"value",
@@ -863,16 +927,7 @@
 			"新浪",
 			"3D Flipping Circle with",
 			"3D Flipping Circle with CSS3 & jQuery",
-			"3D Flipping Circle with",
-			"initCompliteList",
-			"m_isNeedReload",
-			"initCompliteList",
-			"sendTo_getAchievement",
-			"checkNeedReload",
-			"m_isNeedReload",
-			"initCompliteList",
-			"checkNeedReload",
-			"AchievementController"
+			"3D Flipping Circle with"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -919,14 +974,222 @@
 	"groups":
 	[
 		{
+			"selected": 5,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "index.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1247,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								95,
+								95
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"origin_encoding": "UTF-8",
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/E/SanXiaoServer/SanXiaoServer/tester-web/public/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3658,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								38,
+								38
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"origin_encoding": "UTF-8",
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 300,
+						"regions":
+						{
+							"match":
+							{
+								"flags": 112,
+								"regions":
+								[
+									[
+										169,
+										181
+									]
+								],
+								"scope": ""
+							}
+						},
+						"selection":
+						[
+							[
+								178,
+								178
+							]
+						],
+						"settings":
+						{
+							"detect_indentation": false,
+							"incomplete_sync": null,
+							"line_numbers": false,
+							"output_tag": 1,
+							"result_base_dir": "",
+							"result_file_regex": "^([A-Za-z\\\\/<].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "views/layouts/main.handlebars",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 711,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								15,
+								15
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"origin_encoding": "ASCII",
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "public/vendor/mocha.js",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 486822,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								17497,
+								17502
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 20668.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "public/qa/tests-global.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 168,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								168,
+								168
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 37.0
+		"height": 40.0
 	},
 	"input":
 	{
@@ -971,7 +1234,7 @@
 	"project": "learn-express.sublime-project",
 	"replace":
 	{
-		"height": 70.0
+		"height": 76.0
 	},
 	"save_all_on_build": true,
 	"select_file":
