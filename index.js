@@ -27,7 +27,21 @@ app.get('/',function(req,res){
 
 ////======== 关于 ========
 app.get('/about',function (req,res) {
-	res.render('about',{fortune:fortune.getFortune()});
+	var s = '';
+	for(name in req.headers){
+		s += name +' : ' + req.headers[name] + '\n';
+	}
+    s += 'ip' +' : ' + req.ip + '\n';
+    s += 'route' +' : ' + req.route + '\n';
+    s += 'path' +' : ' + req.path + '\n';
+    s += 'host' +' : ' + req.host + '\n';
+    s += 'query' +' : ' + req.query + '\n';
+    s += 'cookies' +' : ' + req.cookies + '\n';
+    s += 'url' +' : ' + req.url + '\n';
+    s += 'orgurl' +' : ' + req.originalUrl + '\n';
+
+    res.send(s);
+	// res.render('about',{fortune:fortune.getFortune()});
 });
 
 ////======== 定制404 ========
