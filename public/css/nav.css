@@ -1,7 +1,7 @@
 @charset "UTF-8";
 html{font-size:62.5%;font-family:'helvetica neue',tahoma,arial,'hiragino sans gb','Simsun',sans-serif} 
 body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td,hr{margin:0;padding:0}
-body{line-height:1.333;font-size:12px;background: #f0f8ff}
+body{line-height:1.333;font-size:12px;background: #fff}
 h1,h2,h3,h4,h5,h6{font-size:100%;font-family:arial,'hiragino sans gb','SimHei','Simsun',sans-serif}
 li{list-style:none}
 a:link,a:visited{text-decoration:none}
@@ -28,3 +28,18 @@ a:link,a:visited{text-decoration:none}
 .navigation-down .menu-1 dd a:hover{color:#789}
 .navigation-down .menu-2 dd a,.navigation-down .menu-3 dd a{color:#fff;font:normal 18px "SimHei"}
 
+
+/* choose-box-wrapper */
+#choose-box-wrapper{width:652px;background:#000;background-color:rgba(0, 0, 0, 0.25);padding:10px;border-radius:5px;display:none;left: 50%; top: 50%; transform: translate(-50%,-50%);position: absolute;}
+#choose-box{width:650px;background:#fff;}
+#choose-box-title{background:#456;color:white;padding:4px 10px 5px;font-size:14px;font-weight:700;margin:0;}
+#choose-box-title span{font-family:Tahoma, Verdana, STHeiTi, simsun, sans-serif;}
+#choose-a-province, #choose-a-school{margin:5px 8px 10px 8px;border:1px solid #C3C3C3;}
+#choose-a-province a{display:inline-block;height:18px;line-height:18px;color:#456;text-decoration:none;font-size:9pt;font-family:Tahoma, Verdana, STHeiTi, simsun, sans-serif;margin:2px 5px;padding:1px;text-align:center;}
+#choose-a-province a:hover{text-decoration:underline;cursor:pointer;}
+#choose-a-province .choosen{background:#456;color:white;}
+#choose-a-school{overflow-x:hidden;overflow-y:auto;height:200px;}
+#choose-a-school a{height:18px;line-height:18px;color:#456;text-decoration:none;font-size:9pt;font-family:Tahoma, Verdana, STHeiTi, simsun, sans-serif;float:left;width:160px;margin:4px 12px;padding-left:10px;background:url(http://pic002.cnblogs.com/images/2012/70278/2012072500060712.gif) no-repeat 0 9px;}
+#choose-a-school a:hover{background:#456;color:#fff;}
+#choose-box-bottom{background:#F0F5F8;padding:8px;text-align:right;border-top:1px solid #CCC;height:40px;}
+#choose-box-bottom input{vertical-align:middle;text-align:center;background:#456;color:white;border-top:1px solid #B8D4E8;border-left:1px solid #B8D4E8;border-right:1px solid #114680;border-bottom:1px solid #114680;cursor:pointer;width:60px;height:25px;margin-top:6px;margin-right:6px;}

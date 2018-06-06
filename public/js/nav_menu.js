@@ -1,7 +1,7 @@
 $(function(){ 
 ////======== 选择学校 ========
 	$('#href_nav_1_school').click(function(){
-		window.location.href = "schools"
+		showSchools();
 	});
 
 ////======== 首页 ========

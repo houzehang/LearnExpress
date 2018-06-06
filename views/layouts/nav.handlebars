@@ -74,7 +74,10 @@ jQuery(document).ready(function(){
 
 	<div class="navigation-up">
 
-		<a class="select_school" href="#" id="href_nav_1_school" title="切换学校"><i class="fa fa-mortar-board">&nbsp;&nbsp;</i>清华大学</a>
+		<a class="select_school" href="#" id="href_nav_1_school" title="切换学校">
+			<i class="fa fa-mortar-board">&nbsp;&nbsp;</i>
+			清华大学
+		</a>
 		<div class="navigation-inner">
 			<div class="navigation-v3">
 
@@ -415,10 +418,25 @@ jQuery(document).ready(function(){
 
 {{{body}}}
 
-<div id="footer">Copyright ©2018 Xuezike</div>
+<script src="js/school.js" type="text/javascript"></script>
 
-<script src="js/nav_menu.js" type="text/javascript"></script>
+<div id="choose-box-wrapper">
+	<div id="choose-box">
+		<div id="choose-box-title">
+			<span>选择学校</span>
+		</div>
+		<div id="choose-a-province"></div>
+		<div id="choose-a-school"></div>
+		<div id="choose-box-bottom">
+			<input type="botton" onclick="hideSchools()" value="关闭" />
+		</div>
+	</div>
+</div>
+
+<div id="footer">Copyright ©2018 Xuezike</div>
 
 </body>
 
+<script src="js/select_school.js" type="text/javascript"></script>
+<script src="js/nav_menu.js" type="text/javascript"></script>
 </html>
