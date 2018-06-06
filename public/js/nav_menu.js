@@ -9,6 +9,11 @@ $(function(){
 		window.location.href = "home"
 	});
 
+////======== 登录 ========
+	$('#href_nav_1_login').click(function(){
+		window.location.href = "login"
+	});
+
 ////======== 校园买卖 ========
 	$('#href_nav_2_trade_shop_boys').click(function(){
 		window.location.href = "shops"

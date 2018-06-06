@@ -14,9 +14,12 @@ a:link,a:visited{text-decoration:none}
 .navigation-up .navigation-v3 ul{float:left}
 .navigation-up .navigation-v3 li{float:left;font:normal 18px/59px "SimHei";color:#fff}
 .navigation-up .navigation-v3 .nav-up-selected{background:#344157}
-.navigation-up .navigation-v3 .nav-up-selected-inpage{background:#202833}
+.navigation-up .navigation-v3 .nav-up-selected-inpage{}
 .navigation-up .navigation-v3 li h2{font-weight:normal;padding:0;margin:0}
 .navigation-up .navigation-v3 li h2 a{padding:0 25px;color:#fff;display:inline-block;height:60px;font-family:"SimHei"}
+.head-v3 .navigation-right{float:right;position: absolute;right: 50px;width: 200px;text-align: right;height:60px;line-height: 60px;font-size: 16px;font-family:'SimHei';color: #abc;}
+.head-v3 .navigation-right a{color: #789;}
+.head-v3 .navigation-right a:hover{color: #abc;}
 
 .navigation-down{position:absolute;top:60px;left:0px;width:100%}
 .navigation-down .nav-down-menu{width:100%;margin:0;background:#344157;position:absolute;top:0px}
