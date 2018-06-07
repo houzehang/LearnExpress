@@ -1,7 +1,7 @@
 "use strict";
 
 exports.session = {
-    secret: 'icebird901',
+    secret: 'xuezike20180607',
     cookie: {
         maxAge: 12 * 3600 * 1000//12 * 3600 * 1000    //12h
     },
