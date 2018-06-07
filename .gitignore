@@ -1,3 +1,2 @@
 # ignore packages installed by npm/cnpm
 node_modules
-/credentials.js
