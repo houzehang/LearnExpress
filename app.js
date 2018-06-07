@@ -16,18 +16,23 @@ app.set('serverConfig', require('./config/server_config'));
 app.set('port',process.env.PORT || 3200);
 
 
-////======== 3.测试中间件 ========
+////======== 3.数据库 ========
+var dbClient = require('./dao/sql_client').init(app.get('serverConfig').mysql, require('mysql'),null);
+app.set('dbClient', dbClient);
+
+
+////======== 4.测试中间件 ========
 app.use(function(req,res,next){
 	res.locals.showTests = app.get('env') !== 'production' && req.query.test === '1';
 	next();
 });
 
 
-////======== 4.资源路径 ========
+////======== 5.资源路径 ========
 app.use(express.static(__dirname + '/public'));
 
 
-////======== 5.会话中间件 ========
+////======== 6.会话中间件 ========
 app.use(require('body-parser').urlencoded({extended:false}));
 app.use(require('cookie-parser')(credentials.cookieSecret));
 app.use(require('express-session')({  
@@ -42,12 +47,12 @@ app.use(function(req, res, next){
     next();
 });
 
-////======== 6.路由 ========
+////======== 7.路由 ========
 var myRouter = new MyRouter(app);
 myRouter.initAll();
 
 
-////======== 7.启动 ========
+////======== 8.启动 ========
 app.listen(app.get('port'),function(){
 	console.log("[xuezike-debug-info] =========== express started on http://localhost:"+ app.get('port'));
 });
