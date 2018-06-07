@@ -1,5 +1,6 @@
 var express = require('express');
 var fortune = require('./lib/fortune.js');
+
 var app = express();
 var MyRouter = require('./routes/myRouter.js');
 ////======== handlebars ========
@@ -15,7 +16,7 @@ app.use(function(req,res,next){
 	next();
 });
 app.use(express.static(__dirname + '/public'));
-
+app.use(require('body-parser').urlencoded({extended:false}));
 ////======== Router ========
 var myRouter = new MyRouter(app);
 myRouter.initAll();

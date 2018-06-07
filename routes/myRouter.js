@@ -25,6 +25,13 @@ MyRouter.prototype.initAll = function(){
 		});
 	};
 
+	////======== 登陆 ========
+	app.post('/loginIn',function(req,res){
+		res.status(200);
+		res.render('about');
+	});
+
+
 	////======== 定制404 ========
 	app.use(function(req,res){
 		res.status(404);
