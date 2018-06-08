@@ -77,7 +77,7 @@ MyRouter.prototype.initAll = function(){
 
         (async function () {
             var bol_success = true;
-            var desc = '恭喜！注册成功';
+            var desc;
             try {
                 await createUser();
             } catch (error) {
@@ -94,8 +94,10 @@ MyRouter.prototype.initAll = function(){
             }
 			res.status(200);
             if (bol_success) {
+            	desc = '恭喜！注册成功';
 				res.render('result',{isOk:true,desc:desc,url:'login?username='+username,staytime:2000});
             }else{
+            	desc = desc || '注册失败'
 				res.render('result',{isOk:false,desc:desc,staytime:2000,goBack:true});
             }
         })();
