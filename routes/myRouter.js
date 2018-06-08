@@ -28,46 +28,76 @@ MyRouter.prototype.initAll = function(){
 
 	////======== 登陆 ========
 	app.post('/_login',function(req,res){
-		res.status(200);
-		res.render('about');
+
+		var accountname = req.body.accountname;
+		var password = req.body.password;
+		var userInfo = null;
+
+		function checkExist(keyName){
+			return userDao.getUserThroughLogin(keyName,accountname,password).then(function(dbRes){
+				if (dbRes && dbRes.length > 0) {
+					userInfo = dbRes[0];
+				}
+			});
+		}
+		(async function () {
+			try{
+				let keys = ['username','phone','email'];
+				for(let i = 0,len = keys.length; i < len; i++){
+					!userInfo && await checkExist(keys[i]);
+				}
+			}catch(error){
+            	let errMsg = error.message || error;
+            	console.log('error:_register'+ errMsg);
+			}
+			console.log('[mylog] ================ userInfo ' + JSON.stringify(userInfo));
+			res.status(200);
+			let desc = '登录成功'
+			if (userInfo) {
+				res.render('result',{isOk:true,desc:desc,url:'home',staytime:2000});
+			}else{
+				desc = '用户名或密码错误'
+				res.render('result',{isOk:false,desc:desc,goBack:true,staytime:2000});
+			}
+		})()
 	});
 
 	////======== 注册 ========
 	app.post('/_register',function(req,res){
  		
- 		var phone = req.body.phone_number;
+ 		var phone = req.body.phone;
         var email = req.body.email;
         var password = req.body.password;
-        var name = req.body.username;
-        var deviceId = req.body.deviceId || 'iphone-1';
-        var deviceName = req.body.deviceName || '';
-        var deviceOS = req.body.deviceOS || '';
-        var fromChannel = req.body.fromChannel || 0;
-        var salt = '';
-        var secret = '';
-        var ip = '1234567';
+        var username = req.body.username;
         var createTime = Date.now();
-        var type = 0;
 
 		function createUser(){
-			return userDao.createUser(email, phone, secret, salt, deviceId, deviceName, deviceOS, ip, createTime, type, fromChannel)
-                .then(function (dbRes) {
-
-                });
+			return userDao.createUser(username, password, phone, email, createTime).then(function (dbRes) {});
 		}
 
         (async function () {
-            var sendData;
-
+            var bol_success = true;
+            var desc = '恭喜！注册成功';
             try {
-            	console.log('createUser');
                 await createUser();
             } catch (error) {
-            	console.log('error:_register'+ (error.message || error));
+            	bol_success = false;
+            	let errMsg = error.message || error;
+            	console.log('error:_register'+ errMsg);
+            	if (/username_UNIQUE/.test(errMsg)){
+            		desc = '用户名已被占用，请更换'
+            	}else if (/phone_UNIQUE/.test(errMsg)) {
+            		desc = '手机号已被占用，请更换'
+            	}else if (/email_UNIQUE/.test(errMsg)) {
+            		desc = '该邮箱已被占用，请更换'
+            	}
             }
-
 			res.status(200);
-			res.render('about');
+            if (bol_success) {
+				res.render('result',{isOk:true,desc:desc,url:'login?username='+username,staytime:2000});
+            }else{
+				res.render('result',{isOk:false,desc:desc,staytime:2000,goBack:true});
+            }
         })();
 	});
 

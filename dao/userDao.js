@@ -5,12 +5,13 @@ var sqlClient = require('./sql_client');
 var nodeUtil = require('util');
 var TABLE_NAME = 'User';
 
-userDao.createUser = function (email, phone, secret, salt, deviceId, deviceName, deviceOS, ip, createTime, type, fromChannel, tempId) {
+userDao.createUser = function (username, password, phone, email, createTime) {
+    createTime = createTime || Date.now();
     var sql = nodeUtil.format('insert into %s ' +
-        '(email, phone, secret, salt, deviceId, deviceName, deviceOS, createIp, createTime, type, fromChannel, tempId)' +
-        ' values(?,?,?,?,?,?,?,?,?,?,?,?)', TABLE_NAME);
+        '(username, password, phone, email, createTime)' +
+        ' values(?,?,?,?,?)', TABLE_NAME);
 
-    var args = [email, phone, secret, salt, deviceId, deviceName, deviceOS, ip, createTime, type, fromChannel,tempId];
+    var args = [username, password, phone, email, createTime];
     return sqlClient.insert(sql, args);
 };
 
@@ -26,63 +27,47 @@ userDao.update = function (uid, attrName, attr) {
     return sqlClient.update(sql, args);
 };
 
-userDao.updatePassword = function (uid, secret, salt) {
-    var sql = nodeUtil.format('update %s set secret = ?, salt = ? where uid = ?', TABLE_NAME);
-    var args = [secret, salt, uid];
+userDao.updatePassword = function (uid, password, salt) {
+    var sql = nodeUtil.format('update %s set password = ?, salt = ? where uid = ?', TABLE_NAME);
+    var args = [password, salt, uid];
     return sqlClient.update(sql, args);
 };
 
-function getUser(sql, args) {
-    return new Promise(function (resolve, reject) {
-        sqlClient.query(sql, args).then(function (data) {
+userDao.getUserThroughLogin= function(key,value,password){
+    var sql  = nodeUtil.format('select id, username, phone, email from %s where %s = ? and password = ? limit 1', TABLE_NAME, key);
+    var args = [value,password];
 
-            if (data.length == 0) {
-                return resolve(null);
-            }
+    return sqlClient.query(sql, args);
+};
 
-            resolve(data[0]);
-        }, function (err) {
-            reject(err);
-        });
-    });
-}
-
-userDao.getUserBy = function (key, value) {
-    var sql  = nodeUtil.format('select id, secret, salt, email, phone, createTime, onlineTime, bannedUntil, lastLoginTime, loginCount, tempId, deviceId' +
+userDao.getUserByKey = function (key, value) {
+    var sql  = nodeUtil.format('select id, username, password, phone, email, createTime' +
         ' from %s where %s = ? limit 1', TABLE_NAME, key);
     var args = [value];
 
-    return getUser(sql, args);
+    return sqlClient.query(sql, args);
 };
 
 userDao.getUserById = function (uid) {
-    var sql  = nodeUtil.format('select id, secret, salt, email, phone, createTime, onlineTime, bannedUntil, lastLoginTime, loginCount, tempId, deviceId' +
+    var sql  = nodeUtil.format('select id, username, password, phone, email, createTime' +
         ' from %s where %s = ? limit 1', TABLE_NAME, 'id');
     var args = [uid];
 
-    return getUser(sql, args);
+    return sqlClient.query(sql, args);
 };
 
 userDao.getUserByPhone = function (phone) {
-    var sql  = nodeUtil.format('select id, secret, salt, email, phone, createTime, onlineTime, bannedUntil, lastLoginTime, loginCount, tempId, deviceId ' +
+    var sql  = nodeUtil.format('select id, username, password, phone, email, createTime' +
         ' from %s where %s = ? limit 1', TABLE_NAME, 'phone');
     var args = [phone];
 
-    return getUser(sql, args);
+    return sqlClient.query(sql, args);
 };
 
 userDao.getUserByEmail = function (email) {
-    var sql  = nodeUtil.format('select id, secret, salt, email, phone, createTime, onlineTime, bannedUntil, lastLoginTime, loginCount, tempId, deviceId ' +
+    var sql  = nodeUtil.format('select id, username, password, phone, email, createTime' +
         ' from %s where %s = ? limit 1', TABLE_NAME, 'email');
     var args = [email];
 
-    return getUser(sql, args);
-};
-
-userDao.getUserByTempId = function (tempId) {
-    var sql  = nodeUtil.format('select id, secret, salt, email, phone, createTime, onlineTime, bannedUntil, lastLoginTime, loginCount, tempId, deviceId ' +
-        ' from %s where %s = ? limit 1', TABLE_NAME, 'tempId');
-    var args = [tempId];
-
-    return getUser(sql, args);
+    return sqlClient.query(sql, args);
 };

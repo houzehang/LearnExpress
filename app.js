@@ -36,16 +36,13 @@ app.use(express.static(__dirname + '/public'));
 app.use(require('body-parser').urlencoded({extended:false}));
 app.use(require('cookie-parser')(credentials.cookieSecret));
 app.use(require('express-session')({  
+    rolling: true,
     resave: true,  
-    saveUninitialized: true,  
-    cookie: {maxAge:2000||app.get('serverConfig').session.cookie.maxAge},  
+    saveUninitialized: false,  
+    cookie: {maxAge:app.get('serverConfig').session.cookie.maxAge},  
     secret: app.get('serverConfig').session.secret  
 }));
-app.use(function(req, res, next){
-    req.session._garbage = Date();
-    req.session.touch();
-    next();
-});
+
 
 ////======== 7.路由 ========
 var myRouter = new MyRouter(app);

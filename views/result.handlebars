@@ -1,0 +1,15 @@
+<div style="width: 100%;text-align: center;">
+	{{#if isOk}}
+		<img onselectstart="return false" style="width: 100px;position: absolute;left: 40%;top: 40%;transform: (-50%,-50%)" src="./img/ok.jpg">
+	{{else}}
+		<img onselectstart="return false" style="width: 100px;position: absolute;left: 40%;top: 40%;transform: (-50%,-50%)" src="./img/error.jpg">
+	{{/if}}
+	<h1 style="position: absolute;left:calc(41% + 100px);top:calc(40% + 50px); font-size: 28px; color: #27303f">{{desc}}</h1>
+</div>
+<script language="javascript" type="text/javascript"> 
+	{{#if goBack}}
+		setTimeout("javaScript:history.go(-1)", {{staytime}}||2000); 
+	{{else}}
+		setTimeout("javascript:location.href='{{url}}'", {{staytime}}||2000); 
+	{{/if}}
+</script>
