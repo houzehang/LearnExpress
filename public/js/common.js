@@ -33,6 +33,16 @@ $(document).ready(function(){
 				maxlength:"密码至多为32个字符",
 			},
 		},
+		submitHandler:function(form){
+			$.post('login',{accountname:$('.username').val(),password:$('.password').val()},function(data){
+				if (data.ok) {
+					alert('登录成功');
+					window.location.href = 'home';
+				}else{
+					alert('登录失败');
+				}
+			})
+		}
 
 	});
 	//注册表单验证
@@ -61,7 +71,7 @@ $(document).ready(function(){
 				minlength:3,
 				equalTo:'.password'
 			},
-			phone_number:{
+			phone:{
 				required:true,
 				phone_number:true,//自定义的规则
 				digits:true,//整数
@@ -89,12 +99,39 @@ $(document).ready(function(){
 				minlength: "确认密码不能少于3个字符",
 				equalTo: "两次输入密码不一致",//与另一个元素相同
 			},
-			phone_number:{
+			phone:{
 				required:"请输入手机号码",
 				digits:"请输入正确的手机号码",
 			},
 		
 		},
+		submitHandler:function(form){
+			$.post('register',{
+					username:$('.username').val()
+					,password:$('.password').val()
+					,phone:$('.phone').val()
+					,email:$('.email').val()
+				},function(data){
+				if (data.ok) {
+					alert('注冊成功');
+					window.location.href = 'login';
+				}else{
+					let tip = '注冊失败';
+					switch(data.code) {
+						case 1001 :
+							tip = '用户名已被占用，请更换';
+							break;
+						case 1002 :
+							tip = '手机号已被占用，请更换';
+							break;
+						case 1003 :
+							tip = '该邮箱已被占用，请更换';
+							break;
+					}
+					alert(tip);
+				}
+			})
+		}
 	});
 	//添加自定义验证规则
 	jQuery.validator.addMethod("phone_number", function(value, element) { 

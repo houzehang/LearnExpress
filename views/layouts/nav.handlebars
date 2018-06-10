@@ -149,7 +149,12 @@ jQuery(document).ready(function(){
 		</div>
 
 		<div class="navigation-right">
-			<a href="#" id="href_nav_1_login"><i class="fa fa-user-o">&nbsp;</i>登录</a>
+			{{#if uid}}
+				<a href="#" id="href_nav_1_exit"><i class="fa fa-user-circle-o">&nbsp;</i>退出</a>
+			{{else}}
+				<a href="#" id="href_nav_1_login"><i class="fa fa-user-circle">&nbsp;</i>登录</a>
+			{{/if}}
+
 		</div>
 
 

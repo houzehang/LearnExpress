@@ -2,7 +2,7 @@
 let path = require('path');
 let fs_util = require(path.join(__dirname, './../utils/fs_util.js'));
 let userDao = require('../dao/userDao');
-
+let viewConfig = require('../config/view_config');
 let MyRouter = function(app){
 	this.app = app;
 }
@@ -22,12 +22,17 @@ MyRouter.prototype.initAll = function(){
 	for(var i = 0,len = viewNameArr.length; i < len; i++){
 		let viewName = viewNameArr[i];
 		app.get('/'+viewName,function(req,res){
-			res.render(viewName);
+			////======== 需要验证登录的页面 ========
+			if (viewConfig.viewsNeedVerifing.indexOf(viewName) > -1 && !req.session.uid) {
+				res.render('login');
+			}else{
+				res.render(viewName,{uid:req.session.uid});
+			}
 		});
 	};
 
 	////======== 登陆 ========
-	app.post('/_login',function(req,res){
+	app.post('/login',function(req,res){
 
 		var accountname = req.body.accountname;
 		var password = req.body.password;
@@ -52,18 +57,23 @@ MyRouter.prototype.initAll = function(){
 			}
 			console.log('[mylog] ================ userInfo ' + JSON.stringify(userInfo));
 			res.status(200);
-			let desc = '登录成功'
 			if (userInfo) {
-				res.render('result',{isOk:true,desc:desc,url:'home',staytime:2000});
+				req.session.uid = userInfo.id;
+				res.send({ok:true});
 			}else{
-				desc = '用户名或密码错误'
-				res.render('result',{isOk:false,desc:desc,goBack:true,staytime:2000});
+				res.send({ok:false});
 			}
 		})()
 	});
 
+	////======== 退出 ========
+	app.post('/exit',function(req,res){
+		delete req.session.uid;
+		res.send({ok:true});
+	});
+
 	////======== 注册 ========
-	app.post('/_register',function(req,res){
+	app.post('/register',function(req,res){
  		
  		var phone = req.body.phone;
         var email = req.body.email;
@@ -77,7 +87,7 @@ MyRouter.prototype.initAll = function(){
 
         (async function () {
             var bol_success = true;
-            var desc;
+            var code;
             try {
                 await createUser();
             } catch (error) {
@@ -85,20 +95,19 @@ MyRouter.prototype.initAll = function(){
             	let errMsg = error.message || error;
             	console.log('error:_register'+ errMsg);
             	if (/username_UNIQUE/.test(errMsg)){
-            		desc = '用户名已被占用，请更换'
+            		code = 1001;
             	}else if (/phone_UNIQUE/.test(errMsg)) {
-            		desc = '手机号已被占用，请更换'
+            		code = 1002;
             	}else if (/email_UNIQUE/.test(errMsg)) {
-            		desc = '该邮箱已被占用，请更换'
+            		code = 1003;
             	}
             }
 			res.status(200);
             if (bol_success) {
-            	desc = '恭喜！注册成功';
-				res.render('result',{isOk:true,desc:desc,url:'login?username='+username,staytime:2000});
+            	res.send({ok:true});
             }else{
-            	desc = desc || '注册失败'
-				res.render('result',{isOk:false,desc:desc,staytime:2000,goBack:true});
+            	code = code || 1000;
+            	res.send({ok:false,code:code});
             }
         })();
 	});
@@ -106,14 +115,14 @@ MyRouter.prototype.initAll = function(){
 	////======== 定制404 ========
 	app.use(function(req,res){
 		res.status(404);
-		res.render('404');
+		res.render('404',{uid:req.session.uid});
 	});
 
 	////======== 定制500 ========
 	app.use(function(req,res){
 		console.log("[xuezike-debug-info] =========== err "+ err.stack);
 		res.status(500);
-		res.render('500')
+		res.render('500',{uid:req.session.uid})
 	});
 }
 

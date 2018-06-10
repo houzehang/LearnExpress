@@ -14,6 +14,18 @@ $(function(){
 		window.location.href = "login"
 	});
 
+////======== 退出 ========
+	$('#href_nav_1_exit').click(function(){
+		$.post("exit", function(data) {
+			if (data.ok) {
+				alert("退出成功");
+				window.location.reload();
+			}else{
+				alert("退出失败");
+			}
+		});
+	});
+
 ////======== 校园买卖 ========
 	$('#href_nav_2_trade_shop_boys').click(function(){
 		window.location.href = "shops"
