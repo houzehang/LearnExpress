@@ -39,7 +39,7 @@ $(document).ready(function(){
 					alert('登录成功');
 					window.location.href = 'home';
 				}else{
-					alert('登录失败');
+					alert('用户名或密码错误');
 				}
 			})
 		}

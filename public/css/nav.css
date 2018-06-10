@@ -2,48 +2,48 @@
 html{font-size:62.5%;font-family:'helvetica neue',tahoma,arial,'hiragino sans gb','Simsun',sans-serif} 
 body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td,hr{margin:0;padding:0}
 body{line-height:1.333;font-size:12px;background: #fff}
-h1,h2,h3,h4,h5,h6{font-size:100%;font-family:arial,'hiragino sans gb','SimHei','Simsun',sans-serif}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-family:"Microsoft YaHei"}
 li{list-style:none}
 a:link,a:visited{text-decoration:none}
-#footer {height: 20px;line-height: 20px;position: fixed; bottom: 0;width: 100%; text-align: center;background: #000000;color: #fff;font-family: 'SimHei';font-size: 12px;letter-spacing: 1px;}
-.select_school{margin-left:55px; position: absolute;display: inline-block;height: 60px;line-height: 60px;font-size:15.8px;font-family:'SimHei'; color: #fff;}
-.select_school:hover{color: #B34B4B}
+#footer {height: 20px;line-height: 20px;position: fixed; bottom: 0;width: 100%; text-align: center;background: #000000;color: #fff;font-family: "Microsoft YaHei";font-size: 12px;letter-spacing: 1px;}
+.select_school{margin-left:55px; position: absolute;display: inline-block;height: 60px;line-height: 60px;font-size:15.8px;font-family: "Microsoft YaHei"; color: #fff;}
+.select_school:hover{color: #735353}
 .head-v3{position:relative;z-index:100;min-width:1000px}
 .head-v3 .navigation-inner{margin:0 auto;width:980px;position:relative}
 .navigation-up{height:60px;background:#000000}
 .navigation-up .navigation-v3{margin-left:155px;float:left;_margin-left:10px}
 .navigation-up .navigation-v3 ul{float:left}
-.navigation-up .navigation-v3 li{float:left;font:normal 18px/59px "SimHei";color:#fff}
-.navigation-up .navigation-v3 .nav-up-selected{background:#B34B4B}
+.navigation-up .navigation-v3 li{float:left;font:normal 18px/59px "Microsoft YaHei";color:#fff}
+.navigation-up .navigation-v3 .nav-up-selected{background:#735353}
 .navigation-up .navigation-v3 .nav-up-selected-inpage{}
 .navigation-up .navigation-v3 li h2{font-weight:normal;padding:0;margin:0}
-.navigation-up .navigation-v3 li h2 a{padding:0 25px;color:#fff;display:inline-block;height:60px;font-family:"SimHei";line-height: 60px;font-size: 18px;}
-.head-v3 .navigation-right{float:right;position: absolute;right: 50px;width: 200px;text-align: right;height:60px;line-height: 60px;font-size: 16px;font-family:'SimHei';color: #abc;}
+.navigation-up .navigation-v3 li h2 a{padding:0 25px;color:#fff;display:inline-block;height:60px;font-family:"Microsoft YaHei";line-height: 60px;font-size: 18px;}
+.head-v3 .navigation-right{float:right;position: absolute;right: 50px;width: 200px;text-align: right;height:60px;line-height: 60px;font-size: 16px;font-family:"Microsoft YaHei";color: #abc;}
 .head-v3 .navigation-right a{color: #FFF;font-size: 15.8px}
-.head-v3 .navigation-right a:hover{color: #B34B4B;}
+.head-v3 .navigation-right a:hover{color: #735353;}
 
 .navigation-down{position:absolute;top:60px;left:0px;width:100%}
-.navigation-down .nav-down-menu{width:100%;margin:0;background:#B34B4B;position:absolute;top:0px}
+.navigation-down .nav-down-menu{width:100%;margin:0;background:#735353;position:absolute;top:0px}
 .navigation-down .nav-down-menu .navigation-down-inner{margin:auto;width:1200px;position:relative}
 .navigation-down .nav-down-menu dl{float:left;margin:18px 80px 18px 0}
 .navigation-down .menu-1 dl{margin:20px 80px 25px 0}
-.navigation-down .menu-1 dt{font:normal 18px "SimHei";color:#444;padding-bottom:10px;border-bottom:1px solid #444;margin-bottom:10px}
-.navigation-down .menu-1 dd a{color:#fff;font:normal 18px/30px "SimHei"}
-.navigation-down .menu-1 dd a:hover{color:#444}
-.navigation-down .menu-2 dd a,.navigation-down .menu-3 dd a{color:#fff;font:normal 18px "SimHei"}
+.navigation-down .menu-1 dt{font:normal 18px "Microsoft YaHei";color:#F9F0D7;padding-bottom:10px;border-bottom:1px solid #F9F0D7;margin-bottom:10px}
+.navigation-down .menu-1 dd a{color:#fff;font:normal 18px/30px "Microsoft YaHei"}
+.navigation-down .menu-1 dd a:hover{color:#000}
+.navigation-down .menu-2 dd a,.navigation-down .menu-3 dd a{color:#fff;font:normal 18px "Microsoft YaHei"}
 
 
 /* choose-box-wrapper */
-#choose-box-wrapper{width:652px;background:#000;background-color:rgba(0, 0, 0, 0.25);padding:10px;border-radius:5px;display:none;left: 50%; top: 50%; transform: translate(-50%,-50%);position: absolute;}
-#choose-box{width:650px;background:#fff;}
-#choose-box-title{background:#456;color:white;padding:4px 10px 5px;font-size:14px;font-weight:700;margin:0;}
-#choose-box-title span{font-family:Tahoma, Verdana, STHeiTi, simsun, sans-serif;}
-#choose-a-province, #choose-a-school{margin:5px 8px 10px 8px;border:1px solid #C3C3C3;}
-#choose-a-province a{display:inline-block;height:18px;line-height:18px;color:#456;text-decoration:none;font-size:9pt;font-family:Tahoma, Verdana, STHeiTi, simsun, sans-serif;margin:2px 5px;padding:1px;text-align:center;}
+#choose-box-wrapper{width:100%;height: calc(100% - 60px); background:#000;background-color:rgba(0, 0, 0, 0.25);display:none;left: 50%; top: 50%; transform: translate(-50%,calc(-50% + 30px));position: absolute;}
+#choose-box{width:1250px;height: 650px; background:#fff;position: absolute;left: 50%;top:100px; transform: translate(-50%,0%);border-radius:5px 5px 0px 0px;}
+#choose-box-title{background:#F2F2F2;color:#735353;padding:4px 10px 5px;font-size:16px;margin:0;height: 40px;line-height: 40px;border-radius:5px 5px 0px 0px;font-weight:bold;}
+#choose-box-title span{font-family:"Microsoft YaHei"}
+#choose-a-province, #choose-a-school{margin:5px 8px 10px 8px;border:1px solid #735353;height: 70px;}
+#choose-a-province a{display:inline-block;height:30px;line-height:30px;color:#000000;text-decoration:none;font-size:16px;font-family:"Microsoft YaHei";margin:2px 5px;padding:0px 3px 0px 3px;text-align:center;}
 #choose-a-province a:hover{text-decoration:underline;cursor:pointer;}
-#choose-a-province .choosen{background:#456;color:white;}
-#choose-a-school{overflow-x:hidden;overflow-y:auto;height:200px;}
-#choose-a-school a{height:18px;line-height:18px;color:#456;text-decoration:none;font-size:9pt;font-family:Tahoma, Verdana, STHeiTi, simsun, sans-serif;float:left;width:160px;margin:4px 12px;padding-left:10px;background:url(http://pic002.cnblogs.com/images/2012/70278/2012072500060712.gif) no-repeat 0 9px;}
-#choose-a-school a:hover{background:#456;color:#fff;}
-#choose-box-bottom{background:#F0F5F8;padding:8px;text-align:right;border-top:1px solid #CCC;height:40px;}
-#choose-box-bottom input{vertical-align:middle;text-align:center;background:#456;color:white;border-top:1px solid #B8D4E8;border-left:1px solid #B8D4E8;border-right:1px solid #114680;border-bottom:1px solid #114680;cursor:pointer;width:60px;height:25px;margin-top:6px;margin-right:6px;line-height:25px;}
+#choose-a-province .choosen{background:#735353;color:white;}
+#choose-a-school{overflow-x:hidden;overflow-y:auto;height:500px;}
+#choose-a-school a{height:30px;line-height:30px;color:#000000;text-decoration:none;font-size:16px;font-family:"Microsoft YaHei";float:left;width:200px;margin:4px 12px;padding-left:10px;background:url(http://pic002.cnblogs.com/images/2012/70278/2012072500060712.gif) no-repeat 0 9px;overflow-x:hidden;}
+#choose-a-school a:hover{background:#735353;color:#fff;}
+#choose-box-bottom{background:#FFFFFF;padding:8px;text-align:right;border-top:1px solid #CCC;height:40px;border-radius:0px 0px 5px 5px;}
+#choose-box-bottom input{vertical-align:middle;text-align:center;background:#000000;color:white;border-top:1px solid #B8D4E8;border-left:1px solid #B8D4E8;border-right:1px solid #114680;border-bottom:1px solid #114680;cursor:pointer;width:60px;height:25px;margin-top:6px;margin-right:6px;line-height:25px;}
