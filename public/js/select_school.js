@@ -1,17 +1,17 @@
 ////======== 弹出窗口 ========
-function showSchools() {
+function showSchools(callback) {
 	//将窗口居中
 	$('#choose-box-wrapper').css("display", "block");
 	$('#choose-box-wrapper').css("position", "absolute");
 
 	//初始化省份列表
-	initProvince();
+	initProvince(callback);
 
 	//默认情况下, 给第一个省份添加choosen样式
 	$('[province-id="1"]').addClass('choosen');
 
 	//初始化大学列表
-	initSchools(1);
+	initSchools(1,callback);
 }
 
 ////======== 隐藏窗口 ========
@@ -20,7 +20,7 @@ function hideSchools() {
 }
 
 ////======== 初始化省份 ========
-function initProvince() {
+function initProvince(callback) {
 
 	//原先的省份列表清空
 	$('#choose-a-province').html('');
@@ -39,12 +39,12 @@ function initProvince() {
 		item.addClass('choosen');
 
 		//更新大学列表
-		initSchools(province);
+		initSchools(province,callback);
 	});
 }
 
 ////======== 初始化学校列表 ========
-function initSchools(provinceID) {
+function initSchools(provinceID,callback) {
 
 	//原先的学校列表清空
 	$('#choose-a-school').html('');
@@ -63,5 +63,9 @@ function initSchools(provinceID) {
 		$("#href_nav_1_school").html(`<i class="fa fa-mortar-board">&nbsp;&nbsp;</i>`+item.text());
 		//关闭弹窗
 		hideSchools();
+
+		if (callback && typeof callback === 'function') {
+			callback.call(null,school);
+		}
 	});
 }

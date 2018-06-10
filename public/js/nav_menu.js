@@ -1,7 +1,12 @@
 $(function(){ 
 ////======== 选择学校 ========
 	$('#href_nav_1_school').click(function(){
-		showSchools();
+		if ($('#uid_hidden_node').val()) {
+			showSchools(function(schoolId){
+			});
+		}else{
+			window.location.href = "login"
+		}
 	});
 
 ////======== 首页 ========

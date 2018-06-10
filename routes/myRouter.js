@@ -24,9 +24,9 @@ MyRouter.prototype.initAll = function(){
 		app.get('/'+viewName,function(req,res){
 			////======== 需要验证登录的页面 ========
 			if (viewConfig.viewsNeedVerifing.indexOf(viewName) > -1 && !req.session.uid) {
-				res.render('login');
+				res.render('login',{isLoginOrRegister:true});
 			}else{
-				res.render(viewName,{uid:req.session.uid});
+				res.render(viewName,{uid:req.session.uid,isLoginOrRegister:/^login$|^register$/.test(viewName)});
 			}
 		});
 	};
@@ -55,7 +55,7 @@ MyRouter.prototype.initAll = function(){
             	let errMsg = error.message || error;
             	console.log('error:_register'+ errMsg);
 			}
-			console.log('[mylog] ================ userInfo ' + JSON.stringify(userInfo));
+			console.log('[mylog] ================ login->userInfo ' + JSON.stringify(userInfo));
 			res.status(200);
 			if (userInfo) {
 				req.session.uid = userInfo.id;
