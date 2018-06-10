@@ -31,6 +31,11 @@ $(function(){
 		});
 	});
 
+////======== 个人信息 ========
+	$('#href_nav_1_info').click(function(){
+		window.location.href = "myinfo";
+	});	
+
 ////======== 校园买卖 ========
 	$('#href_nav_2_trade_shop_boys').click(function(){
 		window.location.href = "shops"

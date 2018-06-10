@@ -26,7 +26,11 @@ MyRouter.prototype.initAll = function(){
 			if (viewConfig.viewsNeedVerifing.indexOf(viewName) > -1 && !req.session.uid) {
 				res.render('login',{isLoginOrRegister:true});
 			}else{
-				res.render(viewName,{uid:req.session.uid,isLoginOrRegister:/^login$|^register$/.test(viewName)});
+				res.render(viewName,{
+					uid:req.session.uid,
+					accountname:req.session.accountname,
+					isLoginOrRegister:/^login$|^register$/.test(viewName)
+				});
 			}
 		});
 	};
@@ -59,6 +63,7 @@ MyRouter.prototype.initAll = function(){
 			res.status(200);
 			if (userInfo) {
 				req.session.uid = userInfo.id;
+				req.session.accountname = accountname;
 				res.send({ok:true});
 			}else{
 				res.send({ok:false});
@@ -69,6 +74,7 @@ MyRouter.prototype.initAll = function(){
 	////======== 退出 ========
 	app.post('/exit',function(req,res){
 		delete req.session.uid;
+		delete req.session.accountname;
 		res.send({ok:true});
 	});
 
@@ -115,14 +121,20 @@ MyRouter.prototype.initAll = function(){
 	////======== 定制404 ========
 	app.use(function(req,res){
 		res.status(404);
-		res.render('404',{uid:req.session.uid});
+		res.render('404',{
+			uid:req.session.uid,
+			accountname:req.session.accountname
+		});
 	});
 
 	////======== 定制500 ========
 	app.use(function(req,res){
 		console.log("[xuezike-debug-info] =========== err "+ err.stack);
 		res.status(500);
-		res.render('500',{uid:req.session.uid})
+		res.render('500',{
+			uid:req.session.uid,
+			accountname:req.session.accountname
+		})
 	});
 }
 

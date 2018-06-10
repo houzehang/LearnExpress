@@ -77,8 +77,8 @@ jQuery(document).ready(function(){
 	<div class="navigation-up">
 
 		<a class="select_school" href="#" id="href_nav_1_school" title="切换学校">
-			<i class="fa fa-mortar-board">&nbsp;&nbsp;</i>
-			清华大学
+			<i class="fa fa-mortar-board">&nbsp;</i>
+			选择学校
 		</a>
 		<div class="navigation-inner">
 			<div class="navigation-v3">
@@ -130,7 +130,7 @@ jQuery(document).ready(function(){
 						<h2>
 
 							<a href="#">我的信息</a>
-
+	
 						</h2>
 
 					</li>
@@ -152,7 +152,8 @@ jQuery(document).ready(function(){
 
 		<div class="navigation-right">
 			{{#if uid}}
-				<a href="#" id="href_nav_1_exit"><i class="fa fa-user-circle-o">&nbsp;</i>退出</a>
+				<a href="#" id="href_nav_1_info" title="{{accountname}}"><i class="fa fa-user-circle-o">&nbsp;</i><label id="accountname" style="display: inline-block;">{{accountname}}</label></a>
+				<a href="#" id="href_nav_1_exit">&nbsp;&nbsp;退出</a>
 			{{else}}
 				<a href="#" id="href_nav_1_login"><i class="fa fa-user-circle">&nbsp;</i>登录</a>
 			{{/if}}
@@ -450,4 +451,25 @@ jQuery(document).ready(function(){
 
 <script src="js/select_school.js" type="text/javascript"></script>
 <script src="js/nav_menu.js" type="text/javascript"></script>
+<script type="text/javascript">
+	////======== 工具函数-获取缩略字符串 ========
+	function getReducedStr(str,limit) {
+	  var realLength = 0, len = str.length, charCode = -1,charCodeArr = [];
+	  for (var i = 0; i < len; i++) {
+	    charCode = str.charCodeAt(i);
+	    charCodeArr.push(charCode);
+	    if (charCode >= 0 && charCode <= 128) 
+	       realLength += 1;
+	    else
+	       realLength += 2;
+	    if (realLength >= limit) {
+			return String.fromCharCode.apply(null,charCodeArr)+(i==len-1?'':'...');
+	    }
+	  }
+	  return str;
+	};  
+	$(function(){ 
+		$('#accountname').text(getReducedStr('{{accountname}}',8));
+	});
+</script>
 </html>
