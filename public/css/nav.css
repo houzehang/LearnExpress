@@ -17,9 +17,9 @@ a:link,a:visited{text-decoration:none}
 .navigation-up .navigation-v3 .nav-up-selected{background:#B34B4B}
 .navigation-up .navigation-v3 .nav-up-selected-inpage{}
 .navigation-up .navigation-v3 li h2{font-weight:normal;padding:0;margin:0}
-.navigation-up .navigation-v3 li h2 a{padding:0 25px;color:#fff;display:inline-block;height:60px;font-family:"SimHei"}
+.navigation-up .navigation-v3 li h2 a{padding:0 25px;color:#fff;display:inline-block;height:60px;font-family:"SimHei";line-height: 60px;font-size: 18px;}
 .head-v3 .navigation-right{float:right;position: absolute;right: 50px;width: 200px;text-align: right;height:60px;line-height: 60px;font-size: 16px;font-family:'SimHei';color: #abc;}
-.head-v3 .navigation-right a{color: #FFF;}
+.head-v3 .navigation-right a{color: #FFF;font-size: 15.8px}
 .head-v3 .navigation-right a:hover{color: #B34B4B;}
 
 .navigation-down{position:absolute;top:60px;left:0px;width:100%}
