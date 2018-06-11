@@ -1,7 +1,7 @@
 @charset "UTF-8";
-html{font-size:62.5%;font-family:'helvetica neue',tahoma,arial,'hiragino sans gb','Simsun',sans-serif} 
+html{font-size:62.5%;font-family:'Microsoft YaHei',tahoma,arial,'hiragino sans gb','Simsun',sans-serif} 
 body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td,hr{margin:0;padding:0}
-body{line-height:1.333;font-size:12px;background: #fff}
+body{line-height:1.333;font-size:12px;background:#f8f8f8;background-image: url(/img/bg.png);}
 h1,h2,h3,h4,h5,h6{font-size:100%;font-family:"Microsoft YaHei"}
 li{list-style:none}
 a:link,a:visited{text-decoration:none}
@@ -10,7 +10,7 @@ a:link,a:visited{text-decoration:none}
 .select_school:hover{color: #735353}
 .head-v3{position:relative;z-index:100;min-width:1000px}
 .head-v3 .navigation-inner{margin:0 auto;width:980px;position:relative}
-.navigation-up{height:60px;background:#000000}
+.navigation-up{height:60px;background:#000000;box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.38)}
 .navigation-up .navigation-v3{margin-left:155px;float:left;_margin-left:10px}
 .navigation-up .navigation-v3 ul{float:left}
 .navigation-up .navigation-v3 li{float:left;font:normal 18px/59px "Microsoft YaHei";color:#fff}
@@ -23,7 +23,7 @@ a:link,a:visited{text-decoration:none}
 .head-v3 .navigation-right a:hover{color: #735353;}
 
 .navigation-down{position:absolute;top:60px;left:0px;width:100%}
-.navigation-down .nav-down-menu{width:100%;margin:0;background:#735353;position:absolute;top:0px}
+.navigation-down .nav-down-menu{width:100%;margin:0;background:#735353;position:absolute;top:0px;box-shadow: 3px 3px 3px rgba(115, 83, 83, 0.38)}
 .navigation-down .nav-down-menu .navigation-down-inner{margin:auto;width:1200px;position:relative}
 .navigation-down .nav-down-menu dl{float:left;margin:18px 80px 18px 0}
 .navigation-down .menu-1 dl{margin:20px 80px 25px 0}
