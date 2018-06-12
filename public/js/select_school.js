@@ -60,12 +60,12 @@ function initSchools(provinceID,callback) {
 
 		//更新选择大学文本框中的值
 		// $('#school-name').val(item.text());
-		$("#href_nav_1_school").html(`<i class="fa fa-mortar-board">&nbsp;&nbsp;</i>`+item.text());
+		// $("#href_nav_1_school").html(`<i class="fa fa-mortar-board">&nbsp;&nbsp;</i>`+item.text());
 		//关闭弹窗
 		hideSchools();
 
 		if (callback && typeof callback === 'function') {
-			callback.call(null,school);
+			callback.call(null,school,item.text());
 		}
 	});
 }

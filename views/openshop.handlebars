@@ -6,6 +6,14 @@
 
 <!-- Text input-->
 <div class="control-group">
+  <label class="control-label" for="schoolname">我的学校</label>
+  <div class="controls">
+    <input id="schoolname" name="schoolname" type="text" placeholder="点击选择" class="input-xlarge" required="" contenteditable="false">
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="control-group">
   <label class="control-label" for="storenname">店铺名称</label>
   <div class="controls">
     <input id="storenname" name="storenname" type="text" placeholder="如：提莫君零食店" class="input-xlarge" required="">
@@ -19,11 +27,15 @@
   <label class="control-label" for="">经营类目</label>
   <div class="controls">
     <label class="checkbox" for="category-0">
-      <input type="checkbox" name="category" id="category-0" value="零食" >
+      <input type="checkbox" name="category" id="category-0" value="零食/饮料" >
       零食
     </label>
     <label class="checkbox" for="category-1">
       <input type="checkbox" name="category" id="category-1" value="二手书" >
+      二手书
+    </label>
+    <label class="checkbox" for="category-1">
+      <input type="checkbox" name="category" id="category-1" value="交通工具" >
       二手书
     </label>
     <label class="checkbox" for="category-2">
@@ -94,6 +106,20 @@
 </fieldset>
 </form>
 
+<script type="text/javascript">
+$(function(){
+    var mySchoolName = null;
+    $('#schoolname').click(function(){
+      showSchools(function(schoolId,schoolName){
+		mySchoolName = schoolName;
+        $("#schoolname").val(schoolName);
+      });
+    });
+    $("#schoolname").bind('input propertychange',function() {
+      $("#schoolname").val(mySchoolName?mySchoolName:'');
+    });
+});
+</script>
 
 
 
