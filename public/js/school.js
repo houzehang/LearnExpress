@@ -12330,3 +12330,19 @@
     }],
     "name": "\u53f0\u6e7e"
 }]
+
+/**
+ * 根据学校ID获取学校名称
+ */
+function getSchoolNameBySid(sid){
+    for(let i = 0,len = schoolList.length; i < len; i++){
+        if (schoolList[i].id == sid.toString().substr(0,2)) {
+            let schools = schoolList[i].school;
+            for(let j = 0, len2 = schools.length;j < len2; j++){
+                if (sid == schools[j].id) {
+                    return schools[j].name;
+                }
+            }
+        }
+    }
+}
