@@ -9,7 +9,7 @@ body{font-family:"Microsoft YaHei","Microsoft JhengHei",STHeiti,MingLiu;color:#f
 .login-container{margin:10% auto 0 auto}
 .register-container{margin:6% auto 0 auto}
 @media (min-width:670px){
-	.login-container {margin: 8% auto 0 auto;left: 50%; top: 25%; transform: translate(-50%,-50%);position: absolute;text-align: center;}
+	.login-container {margin: 8% auto 0 auto;left: 50%; top: 0px; transform: translate(-50%,0%);position: absolute;text-align: center;margin-bottom: 40px;}
 }
 h1{font-size:26px;font-weight:700;color: #735353}
 form{position:relative;width:305px;margin:15px auto 0 auto;text-align:center}
