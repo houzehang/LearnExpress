@@ -4,5 +4,6 @@ module.exports = {
 		'home'
 		,'about'
 		,'openshop'
+		,'myinfo'
 	]
 }

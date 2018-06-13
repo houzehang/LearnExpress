@@ -3,7 +3,7 @@
 var userDao = module.exports;
 var sqlClient = require('./sql_client');
 var nodeUtil = require('util');
-var TABLE_NAME = 'User';
+var TABLE_NAME = 'user';
 
 userDao.createUser = function (username, password, phone, email, createTime) {
     createTime = createTime || Date.now();

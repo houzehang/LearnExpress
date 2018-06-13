@@ -1,1 +1,2 @@
-console.log('[mylog] ================  ' + "\u5317\u4eac\u822a\u7a7a\u822a\u5929\u5927\u5b66");
+var a = '1044'
+console.log(a.substr(0,a.length - 3));

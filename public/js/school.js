@@ -12336,10 +12336,11 @@
  */
 function getSchoolNameBySid(sid){
     for(let i = 0,len = schoolList.length; i < len; i++){
-        if (schoolList[i].id == sid.toString().substr(0,2)) {
+        if (schoolList[i].id == sid.toString().substr(0,sid.toString().length - 3)) {
             let schools = schoolList[i].school;
             for(let j = 0, len2 = schools.length;j < len2; j++){
                 if (sid == schools[j].id) {
+                    console.log(schools[j].name);
                     return schools[j].name;
                 }
             }

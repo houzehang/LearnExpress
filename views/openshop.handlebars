@@ -106,22 +106,6 @@
 </fieldset>
 </form>
 
-<script type="text/javascript">
-$(function(){
-    var mySchoolName = null;
-    $('#schoolname').click(function(){
-      showSchools(function(schoolId,schoolName){
-		mySchoolName = schoolName;
-        $("#schoolname").val(schoolName);
-      });
-    });
-    $("#schoolname").bind('input propertychange',function() {
-      $("#schoolname").val(mySchoolName?mySchoolName:'');
-    });
-});
-</script>
-
-
 
 
 
