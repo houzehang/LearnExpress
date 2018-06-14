@@ -29,7 +29,7 @@ module.exports = function(app) {
 
 		////======== 2.验证 ========
 		if (verifying && !uid) {
-			result.code = 10003;
+			result.code = 1003;
 			res.send(result);
 			return;
 		}
@@ -94,7 +94,7 @@ module.exports = function(app) {
 
 		////======== 2.验证 ========
 		if (verifying && !uid) {
-			result.code = 10003;
+			result.code = 1003;
 			res.send(result);
 			return;
 		}

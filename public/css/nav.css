@@ -2,6 +2,13 @@
 html{font-size:62.5%;font-family:'Microsoft YaHei',tahoma,arial,'hiragino sans gb','Simsun',sans-serif} 
 body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td,hr{margin:0;padding:0}
 body{line-height:1.333;font-size:12px;background:#f8f8f8;background-image: url(/img/bg.png);}
+@keyframes fadein{0%{opacity: 0;}100%{opacity: 1;}}
+@-webkit-keyframes fadein{ 0%{opacity: 0;}100%{opacity: 1;}}
+@-moz-keyframes fadein{0%{opacity: 0; }100%{opacity: 1;}}
+@-o-keyframes fadein{ 0%{opacity: 0; }100%{opacity: 1;}}
+@-ms-keyframes fadein{0%{opacity: 0; } 100%{opacity: 1; }}
+/*页面淡入*/
+body{ animation:fadein 0.2s linear 1; -webkit-animation:fadein 0.2s linear 1;-moz-animation:fadein 0.2s linear 1; -o-animation:fadein 0.2s linear 1;-ms-animation:fadein 0.2s linear 1;}
 h1,h2,h3,h4,h5,h6{font-size:100%;font-family:"Microsoft YaHei"}
 li{list-style:none}
 a:link,a:visited{text-decoration:none}
@@ -43,7 +50,7 @@ a:link,a:visited{text-decoration:none}
 #choose-a-province a:hover{text-decoration:underline;cursor:pointer;}
 #choose-a-province .choosen{background:#735353;color:white;}
 #choose-a-school{overflow-x:hidden;overflow-y:auto;height:500px;}
-#choose-a-school a{height:30px;line-height:30px;color:#000000;text-decoration:none;font-size:16px;font-family:"Microsoft YaHei";float:left;width:200px;margin:4px 12px;padding-left:10px;background:url(http://pic002.cnblogs.com/images/2012/70278/2012072500060712.gif) no-repeat 0 9px;overflow-x:hidden;}
+#choose-a-school a{height:30px;line-height:30px;color:#000000;text-decoration:none;font-size:16px;font-family:"Microsoft YaHei";float:left;width:200px;margin:4px 12px;padding-left:10px;overflow-x:hidden;}
 #choose-a-school a:hover{background:#735353;color:#fff;}
 #choose-box-bottom{background:#FFFFFF;padding:8px;text-align:right;border-top:1px solid #CCC;height:40px;border-radius:0px 0px 5px 5px;}
 #choose-box-bottom input{vertical-align:middle;text-align:center;background:#000000;color:white;border-top:1px solid #B8D4E8;border-left:1px solid #B8D4E8;border-right:1px solid #114680;border-bottom:1px solid #114680;cursor:pointer;width:60px;height:25px;margin-top:6px;margin-right:6px;line-height:25px;}

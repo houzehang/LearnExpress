@@ -1,3 +1,16 @@
+<style type="text/css">
+  .wrap{min-width: 320px;max-width:768px;margin:0;overflow:hidden;position:relative;}
+  .wrapper {position:relative;height: 90px;width: 290px;overflow: hidden;margin:0;}
+  .wrapper .scroller {position:absolute;}
+  .wrapper .scroller li {float: left;width: 80px;height: 80px;line-height: 80px;text-align: center;font-style: none;padding: 5px}
+  .wrapper .scroller li:nth-child(1) {} 
+  .wrapper .scroller li {}
+  .wrapper .scroller li span{display:block;}
+</style>
+
+<script type="text/javascript" src="plugin/iscroll/iscroll.js"></script>
+<script type="text/javascript" src="plugin/iscroll/navbarscroll.js"></script>
+
 <form class="form-horizontal" >
 <fieldset>
 
@@ -21,6 +34,40 @@
   </div>
 </div>
 
+<!-- File Button --> 
+<div class="control-group">
+  <label class="control-label" for="logo">店铺图标</label>
+  <div class="controls" >
+    <input style="display: none;" id="logo" name="logo" class="input-file" type="file">
+
+    <div class="wrapper" id="wrapper1">
+      <div class="scroller">
+        <ul class="clearfix">
+          <li><img id="shopicon_1" onclick="selectShopIcon(this)" ondragstart="return false;" src="/img/shopicon.png" style="width: 80px;height: 80px;background: #ddd;" /></li>
+          <li><img id="shopicon_2" onclick="selectShopIcon(this)" ondragstart="return false;" src="/img/shopicon.png" style="width: 80px;height: 80px;background: #ddd;" /></li>
+          <li><img id="shopicon_3" onclick="selectShopIcon(this)" ondragstart="return false;" src="/img/shopicon.png" style="width: 80px;height: 80px;background: #ddd;" /></li>
+          <li><img id="shopicon_4" onclick="selectShopIcon(this)" ondragstart="return false;" src="/img/shopicon.png" style="width: 80px;height: 80px;background: #ddd;" /></li>
+          <li><img id="shopicon_5" onclick="selectShopIcon(this)" ondragstart="return false;" src="/img/shopicon.png" style="width: 80px;height: 80px;background: #ddd;" /></li>
+          <li><img id="shopicon_6" onclick="selectShopIcon(this)" ondragstart="return false;" src="/img/shopicon.png" style="width: 80px;height: 80px;background: #ddd;" /></li>
+          <li><img id="shopicon_7" onclick="selectShopIcon(this)" ondragstart="return false;" src="/img/shopicon.png" style="width: 80px;height: 80px;background: #ddd;" /></li>
+          <li><img id="shopicon_8" onclick="selectShopIcon(this)" ondragstart="return false;" src="/img/shopicon.png" style="width: 80px;height: 80px;background: #ddd;" /></li>
+          <li><img id="shopicon_9" onclick="selectShopIcon(this)" ondragstart="return false;" src="/img/shopicon.png" style="width: 80px;height: 80px;background: #ddd;" /></li>
+          <li><img id="shopicon_10" onclick="selectShopIcon(this)" ondragstart="return false;" src="/img/shopicon.png" style="width: 80px;height: 80px;background: #ddd;" /></li>
+          <li><img id="shopicon_11" onclick="selectShopIcon(this)" ondragstart="return false;" src="/img/shopicon.png" style="width: 80px;height: 80px;background: #ddd;" /></li>
+          <li><img id="shopicon_12" onclick="selectShopIcon(this)" ondragstart="return false;" src="/img/shopicon.png" style="width: 80px;height: 80px;background: #ddd;" /></li>
+          <li><img id="shopicon_13" onclick="selectShopIcon(this)" ondragstart="return false;" src="/img/shopicon.png" style="width: 80px;height: 80px;background: #ddd;" /></li>
+          <li><img id="shopicon_14" onclick="selectShopIcon(this)" ondragstart="return false;" src="/img/shopicon.png" style="width: 80px;height: 80px;background: #ddd;" /></li>
+          <li><img id="shopicon_15" onclick="selectShopIcon(this)" ondragstart="return false;" src="/img/shopicon.png" style="width: 80px;height: 80px;background: #ddd;" /></li>
+          <li><img id="shopicon_16" onclick="selectShopIcon(this)" ondragstart="return false;" src="/img/shopicon.png" style="width: 80px;height: 80px;background: #ddd;" /></li>
+          <li><img id="shopicon_17" onclick="selectShopIcon(this)" ondragstart="return false;" src="/img/shopicon.png" style="width: 80px;height: 80px;background: #ddd;" /></li>
+          <li><img id="shopicon_18" onclick="selectShopIcon(this)" ondragstart="return false;" src="/img/shopicon.png" style="width: 80px;height: 80px;background: #ddd;" /></li>
+          <li><img id="shopicon_19" onclick="selectShopIcon(this)" ondragstart="return false;" src="/img/shopicon.png" style="width: 80px;height: 80px;background: #ddd;" /></li>
+          <li><img id="shopicon_20" onclick="selectShopIcon(this)" ondragstart="return false;" src="/img/shopicon.png" style="width: 80px;height: 80px;background: #ddd;" /></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- Multiple Checkboxes -->
 <div class="control-group">
@@ -105,7 +152,21 @@
 
 </fieldset>
 </form>
+<script type="text/javascript">
+  $(function(){
+    $('#logo').on('change', function() {
+      var img = window.document.getElementById('imglogo');
+      var dom = window.document.getElementById('logo');
+      img.src = window.URL.createObjectURL(dom.files[0])
+    });
 
+    $('.wrapper').navbarscroll();
+  });
+
+  function selectShopIcon(item){
+    alert(item.getAttribute("id"));
+  }
+</script>
 
 
 
