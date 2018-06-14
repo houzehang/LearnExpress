@@ -75,15 +75,16 @@ CREATE TABLE `shop` (
   `uid` int(10) DEFAULT NULL COMMENT '用户ID',
   `name` varchar(64) DEFAULT NULL COMMENT '商店名称',
   `logo` varchar(255) DEFAULT NULL COMMENT '商店图标',
-  `class` varchar(20) DEFAULT NULL COMMENT '商店经营类目',
+  `kinds` varchar(30) DEFAULT NULL COMMENT '商店经营类目',
   `sid` int(10) DEFAULT NULL COMMENT '所在学校id',
   `open` smallint(6) DEFAULT NULL COMMENT '是否营业',
   `goodscount` varchar(255) DEFAULT NULL COMMENT '商品数量',
   `notice` varchar(255) DEFAULT NULL COMMENT '店铺公告',
   `scope` varchar(255) DEFAULT NULL COMMENT '派送范围',
   `carryprice` int(10) DEFAULT NULL COMMENT '起送价格',
-  `people` smallint(6) DEFAULT NULL COMMENT '服务对象',
-  `tradeway` smallint(6) DEFAULT NULL COMMENT '交易方式',
+  `people` varchar(20) DEFAULT NULL COMMENT '服务对象',
+  `tradeway` varchar(20) DEFAULT NULL COMMENT '交易方式',
+  `payway` varchar(20) DEFAULT NULL COMMENT '支付方式',
   `createtime` bigint(20) DEFAULT NULL COMMENT '创建时间',
   PRIMARY KEY (`shopid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -109,7 +110,7 @@ CREATE TABLE `student` (
   `createtime` bigint(20) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `uid_duplicate` (`uid`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -142,4 +143,4 @@ CREATE TABLE `user` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-06-13  9:21:19
+-- Dump completed on 2018-06-14 23:39:04
