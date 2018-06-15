@@ -45,6 +45,7 @@
   <label class="control-label" for="btn_save"></label>
   <div class="controls">
     <button id="btn_save" name="btn_save" class="btn btn-success" disabled="true">保存</button>
+    <button id="btn_abort" name="btn_abort" class="btn btn-danger" style="display: none;">取消</button>
   </div>
 </div>
 
@@ -61,8 +62,11 @@ $(function(){
   function checkChanged(){
     if (orgSid != mySchoolId || orgTel != $('#tel').val() || orgAdress != $('#address').val() || orgName != $('#nickname').val()) {
       $('#btn_save').removeAttr("disabled"); 
+      $('#btn_abort').show(); 
+
     }else{
       $('#btn_save').attr("disabled","disabled"); 
+      $('#btn_abort').hide(); 
     }
   }
   ////======== 选择学校 ========
@@ -129,6 +133,16 @@ $(function(){
         alert('保存失败');
       }
     })
+  });
+  ////======== 取消保存 ========
+  $('#btn_abort').click(function() {
+    window.event.returnValue = false;
+    mySchoolId = orgSid;
+    $('#schoolname').val(getSchoolNameBySid(orgSid));
+    $('#tel').val(orgTel);
+    $('#address').val(orgAdress);
+    $('#nickname').val(orgName);
+    checkChanged();
   });
 
   ////======== 初始化数据 ========

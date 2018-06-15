@@ -9,8 +9,8 @@ module.exports = function(app) {
 	app.get('/' + viewName, function(req, res) {
 
 		////======== 1.声明 ========
-		let verifying = true;
 		let uid = req.session.uid;
+		let verifying = true;
 
 		////======== 2.验证 ========
 		if (verifying && !uid) {

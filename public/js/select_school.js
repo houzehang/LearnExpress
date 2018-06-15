@@ -2,7 +2,7 @@
 function showSchools(callback) {
 	//将窗口居中
 	$('#choose-box-wrapper').css("display", "block");
-	$('#choose-box-wrapper').css("position", "absolute");
+	$('#choose-box-wrapper').css("position", "fixed");
 
 	//初始化省份列表
 	initProvince(callback);

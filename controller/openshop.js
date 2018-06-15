@@ -1,7 +1,7 @@
 ////======== 开店 ========
 
 let shopDao = require('../dao/shopDao');
-
+let studentDao = require('../dao/studentDao');
 module.exports = function(app) {
 
 	let viewName = 'openshop';
@@ -21,9 +21,18 @@ module.exports = function(app) {
 		}
 
 		////======== 3.逻辑 ========
+		let student = {};
+
+		function getStudentByUid(uid) {
+			return studentDao.getStudentByUid(uid).then(function(dbRes) {
+				if (dbRes && dbRes.length > 0) {
+					student = dbRes[0];
+				}
+			});
+		}
 		(async function() {
 			try {
-
+				await getStudentByUid(uid);
 			} catch (error) {
 				let errMsg = error.message || error;
 				console.log('[get-error-msg] ' + req.route.path + 'error:' + errMsg);
@@ -32,7 +41,7 @@ module.exports = function(app) {
 			let result = Object.assign({
 				uid: req.session.uid,
 				accountname: req.session.accountname
-			}, {});
+			}, student);
 			console.log('[get-result] ' + req.route.path + ' result :' + JSON.stringify(result));
 			res.render(viewName, result);
 		})()
