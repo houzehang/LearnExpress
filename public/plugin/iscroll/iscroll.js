@@ -2109,7 +2109,7 @@ Indicator.prototype = {
 };
 
 IScroll.utils = utils;
-
+window.IScroll = IScroll;
 if ( typeof module != 'undefined' && module.exports ) {
 	module.exports = IScroll;
 } else if ( typeof define == 'function' && define.amd ) {
