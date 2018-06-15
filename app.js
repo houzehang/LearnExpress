@@ -17,7 +17,7 @@ app.set('port', process.env.PORT || 3200);
 app.set('viewConfig', require('./config/view_config'));
 
 ////======== 3.数据库 ========
-var dbClient = require('./dao/sql_client').init(app.get('serverConfig').mysql, require('mysql'), null);
+var dbClient = require('./dao/sql/sql_client').init(app.get('serverConfig').mysql, require('mysql'), null);
 app.set('dbClient', dbClient);
 
 

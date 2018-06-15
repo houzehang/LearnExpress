@@ -21,3 +21,26 @@ exports.mysql = {
     user : "root",
     password : "root"
 };
+
+exports.redis = {
+    host: "localhost",
+    port: 6379,
+    database: 0,
+    options: {}
+};
+
+exports.redisCluster = {
+    nodes:[{
+        port: 7100,
+        host: '127.0.0.1'
+    },{
+        port: 7200,
+        host: '127.0.0.1'
+    },{
+        port: 7300,
+        host: '127.0.0.1'
+    }],
+    option:{
+        scaleReads: 'slave'
+    }
+};

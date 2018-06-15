@@ -1,6 +1,6 @@
 ////======== 登录 ========
 
-let userDao = require('../dao/userDao');
+let userDao = require('../dao/sql/sql_dao/userDao');
 
 module.exports = function(app) {
 

@@ -1,7 +1,7 @@
 ////======== 开店 ========
 
-let shopDao = require('../dao/shopDao');
-let studentDao = require('../dao/studentDao');
+let shopDao = require('../dao/sql/sql_dao/shopDao');
+let studentDao = require('../dao/sql/sql_dao/studentDao');
 module.exports = function(app) {
 
 	let viewName = 'openshop';

@@ -1,7 +1,7 @@
 "use strict";
 
 var shopDao = module.exports;
-var sqlClient = require('./sql_client');
+var sqlClient = require('./../sql_client');
 var nodeUtil = require('util');
 var TABLE_NAME = 'shop';
 

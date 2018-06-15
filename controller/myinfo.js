@@ -1,6 +1,6 @@
 ////======== 我的信息 ========
 
-let studentDao = require('../dao/studentDao');
+let studentDao = require('../dao/sql/sql_dao/studentDao');
 
 module.exports = function(app) {
 
