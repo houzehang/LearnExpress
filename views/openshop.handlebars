@@ -198,15 +198,6 @@
   </div>
 </div>
 
-<!-- Text input-->
-<div class="control-group">
-  <label class="control-label" for="scope">派送范围</label>
-  <div class="controls">
-    <input id="scope" name="scope" type="text" placeholder="如：男生宿舍2号楼" class="input-xlarge" required="">
-    <p class="help-block">请认真填写派送范围，以免无法派送</p>
-  </div>
-</div>
-
 <!-- Multiple Checkboxes (inline) -->
 <div class="control-group">
   <label class="control-label" for="">交易方式</label>
@@ -227,6 +218,15 @@
   <label class="control-label" for="carryprice">起送价格</label>
   <div class="controls">
     <input id="carryprice" name="carryprice" type="text" class="input-mini" maxlength="4" required="" placeholder="￥">
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="control-group" id="control-group-scope">
+  <label class="control-label" for="scope">派送范围</label>
+  <div class="controls">
+    <input id="scope" name="scope" type="text" placeholder="如：男生宿舍2号楼" class="input-xlarge" required="">
+    <p class="help-block">请认真填写派送范围，以免无法派送</p>
   </div>
 </div>
 
@@ -265,62 +265,28 @@
 
 </fieldset>
 </form>
-<script type="text/javascript">
-  $(function(){
-    $('#logo').on('change', function() {
-      var img = window.document.getElementById('imglogo');
-      var dom = window.document.getElementById('logo');
-      img.src = window.URL.createObjectURL(dom.files[0])
-    });
-    let _requireRefid = 0;
-    require(['plugin/iscroll/iscroll'],function(){
-      ++_requireRefid == 2 && $('.wrapper').navbarscroll();
-    });  
-    require(['plugin/iscroll/navbarscroll'], function(){  
-      ++_requireRefid == 2 && $('.wrapper').navbarscroll();
-    });  
 
-    $("#carryprice").bind('input propertychange', function() {
-      var price = '￥'+($("#carryprice").val().match(/\d+/)?$("#carryprice").val().match(/\d+/)[0]:'');
-      $("#carryprice").val(price);
-    });
-  });
+<script type="text/javascript">
   ////======== 选择店铺图标 ========
   function selectShopIcon(item){
-    // alert(item.getAttribute("id"));
     let itemId = item.getAttribute("id");
     for(let i = 1; i <= 30; i++){
       let tmpId = 'shopicon_'+i;
       if (itemId == tmpId) {
-        // alert(itemId);
         $('#'+tmpId).css("border", "5px solid #735353");
         $('#'+tmpId).css("width", "70px");
         $('#'+tmpId).css("height", "70px");
         $("#shopicon_0").attr('src',$('#'+tmpId)[0].src); 
       }else{
         $('#'+tmpId).css("border", "none");
-        $('#'+tmpId).css("width", "82px");
-        $('#'+tmpId).css("height", "82px");
+        $('#'+tmpId).css("width", "80px");
+        $('#'+tmpId).css("height", "80px");
       }
     }
   }
-  ////======== 选中送货上门 ========
-  $("#tradeway-0").change(function() { 
-    if ($("#tradeway-0").is(':checked')) {
-      $('#control-group-carryprice').show();
-      $("#carryprice").focus();
-    }else{
-      $('#control-group-carryprice').hide();
-      $("#carryprice").blur();
-    }
-  });
-
-  if ($("#tradeway-0").is(':checked')) {
-    $('#control-group-carryprice').show();
-  }else{
-    $('#control-group-carryprice').hide();
-    $("#carryprice").blur();
-  }
+  require(['js/viewlogic/OpenShopLogic'], function(handler){  
+    handler();
+  });  
 </script>
 
 
