@@ -25,7 +25,7 @@ a:link,a:visited{text-decoration:none}
 .navigation-up .navigation-v3 .nav-up-selected-inpage{}
 .navigation-up .navigation-v3 li h2{font-weight:normal;padding:0;margin:0}
 .navigation-up .navigation-v3 li h2 a{padding:0 25px;color:#fff;display:inline-block;height:60px;font-family:"Microsoft YaHei";line-height: 60px;font-size: 18px;}
-.head-v3 .navigation-right{float:right;position: absolute;right: 50px;text-align: right;height:60px;line-height: 60px;font-size: 16px;font-family:"Microsoft YaHei";color: #abc;}
+.head-v3 .navigation-right{float:right;position: absolute;right: 15px;text-align: right;height:60px;line-height: 60px;font-size: 16px;font-family:"Microsoft YaHei";color: #abc;}
 .head-v3 .navigation-right a{color: #FFF;font-size: 15.8px}
 .head-v3 .navigation-right a:hover{color: #735353;}
 
