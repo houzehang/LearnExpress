@@ -40,6 +40,13 @@ define(function(){
         $('#control-group-scope').hide();
         $("#carryprice").blur();
       }
+
+      ////======== 动态调整form位置 ========
+
+      var height=$("#myinfofield").height()
+      $("#openshopfield").css("top",height+90);
+      $("#openshopfield").css("margin-bottom",60);
+      $("#openshopfield").fadeIn();
     });
   }
 });

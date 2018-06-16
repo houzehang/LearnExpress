@@ -947,6 +947,8 @@ fieldset {
 	margin-left: calc(50% - 280px);
 	margin-top: 0px;
 	background: rgba(115, 115, 115, 0.05);
+	position: absolute;
+	display: none;	
 }
 
 legend {

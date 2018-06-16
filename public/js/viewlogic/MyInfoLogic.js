@@ -97,6 +97,8 @@ define(function(){
       $('#tel').val(body.tel);
       $('#address').val(body.address);
       $('#nickname').val(body.nickname);
+
+      $("#myinfofield").fadeIn();
     });
   }
 });
