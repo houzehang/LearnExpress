@@ -3,7 +3,7 @@ $(function(){
 	$('#href_nav_1_school').click(function(){
 		if ($('#uid_hidden_node').val()) {
 			showSchools(function(schoolId,schoolName){
-				$("#href_nav_1_school").html(`<i class="fa fa-mortar-board">&nbsp;&nbsp;</i>`+schoolName);
+				$("#href_nav_1_school").html(`<i class="fa fa-location-arrow">&nbsp;&nbsp;</i>`+schoolName);
 			});
 		}else{
 			window.location.href = "login"
