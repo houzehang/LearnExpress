@@ -62,6 +62,7 @@ module.exports = function(app) {
 		let notice = req.body.notice;
 		let scope = req.body.scope;
 		let carryprice = req.body.carryprice;
+		let carryfee = req.body.carryfee;
 		let people = req.body.people;
 		let tradeway = req.body.tradeway;
 		let createtime = Date.now();
@@ -75,7 +76,7 @@ module.exports = function(app) {
 
 		////======== 3.逻辑 ========
 		function createShop() {
-			return shopDao.createShop(uid, name, logo, classstr, sid, open, goodscount, notice, scope, carryprice, people, tradeway, createtime).then(function(dbRes) {});
+			return shopDao.createShop(uid, name, logo, classstr, sid, open, goodscount, notice, scope, carryprice, carryprice, people, tradeway, createtime).then(function(dbRes) {});
 		}
 
 		(async function() {

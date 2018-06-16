@@ -19,14 +19,21 @@ define(function(){
         $("#carryprice").val(price);
       });
 
+      $("#carryfee").bind('input propertychange', function() {
+        var price = '￥'+($("#carryfee").val().match(/\d+/)?$("#carryfee").val().match(/\d+/)[0]:'');
+        $("#carryfee").val(price);
+      });
+
       ////======== 选中送货上门 ========
       $("#tradeway-0").change(function() { 
         if ($("#tradeway-0").is(':checked')) {
           $('#control-group-carryprice').show();
+          $('#control-group-carryfee').show();
           $('#control-group-scope').show();
           $("#carryprice").focus();
         }else{
           $('#control-group-carryprice').hide();
+          $('#control-group-carryfee').hide();
           $('#control-group-scope').hide();
           $("#carryprice").blur();
         }
@@ -34,9 +41,11 @@ define(function(){
 
       if ($("#tradeway-0").is(':checked')) {
         $('#control-group-carryprice').show();
+        $('#control-group-carryfee').show();
         $('#control-group-scope').show();
       }else{
         $('#control-group-carryprice').hide();
+        $('#control-group-carryfee').hide();
         $('#control-group-scope').hide();
         $("#carryprice").blur();
       }

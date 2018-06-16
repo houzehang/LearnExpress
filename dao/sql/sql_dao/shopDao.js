@@ -8,11 +8,11 @@ var TABLE_NAME = 'shop';
 shopDao.createShop = function (uid, name, logo, kinds, sid, open, goodscount, notice, scope, carryprice, people, tradeway, createtime) {
     createtime = createtime || Date.now();
     var sql = nodeUtil.format('insert into %s ' +
-        '(uid, name, logo, kinds, sid, open, goodscount, notice, scope, carryprice, people, tradeway, payway, createtime)' +
-        ' values(?,?,?,?,?,?,?,?,?,?,?,?,?,?) on  DUPLICATE key update name = ?, logo = ?,kinds = ?,sid = ?,open = ?,goodscount = ?,notice = ?,scope = ?,carryprice = ?,people = ?,tradeway = ?,payway = ?', TABLE_NAME);
+        '(uid, name, logo, kinds, sid, open, goodscount, notice, scope, carryprice, carryfee, people, tradeway, payway, createtime)' +
+        ' values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) on  DUPLICATE key update name = ?, logo = ?,kinds = ?,sid = ?,open = ?,goodscount = ?,notice = ?,scope = ?,carryprice = ?,carryfee = ?,people = ?,tradeway = ?,payway = ?', TABLE_NAME);
 
-    var args = [uid, name, logo, kinds, sid, open, goodscount, notice, scope, carryprice ,people, tradeway, payway, createtime, 
-    	name, logo, kinds, sid, open, goodscount, notice, scope, carryprice, people, tradeway, payway];
+    var args = [uid, name, logo, kinds, sid, open, goodscount, notice, scope, carryprice, carryfee, people, tradeway, payway, createtime, 
+    	name, logo, kinds, sid, open, goodscount, notice, scope, carryprice, carryfee, people, tradeway, payway];
     return sqlClient.insert(sql, args);
 };
 

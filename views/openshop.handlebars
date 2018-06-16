@@ -217,15 +217,15 @@
 <div class="control-group" id="control-group-carryprice">
   <label class="control-label" for="carryprice">起送价格</label>
   <div class="controls">
-    <input id="carryprice" name="carryprice" type="text" class="input-mini" maxlength="4" required="" placeholder="￥">
+    <input id="carryprice" name="carryprice" type="text" class="input-mini" maxlength="4" required="" placeholder="￥0">
   </div>
 </div>
 
 <!-- Text input-->
-<div class="control-group" id="control-group-carryprice">
-  <label class="control-label" for="carryprice">配送费</label>
+<div class="control-group" id="control-group-carryfee">
+  <label class="control-label" for="carryfee">配送费</label>
   <div class="controls">
-    <input id="carryprice" name="carryprice" type="text" class="input-mini" maxlength="4" required="" placeholder="￥">
+    <input id="carryfee" name="carryfee" type="text" class="input-mini" maxlength="4" required="" placeholder="￥0">
   </div>
 </div>
 
@@ -243,12 +243,12 @@
   <label class="control-label" for="">支付方式</label>
   <div class="controls">
     <label class="checkbox inline" for="payway-0">
-      <input type="checkbox" name="payway" id="payway-0" value="1">
+      <input type="checkbox" name="payway" id="payway-0" value="1" checked="checked">
       支持当面支付
     </label>
     <label class="checkbox inline" for="payway-1">
-      <input type="checkbox" name="payway" id="payway-1" value="2">
-      支持扫码支付
+      <input type="checkbox" name="payway" id="payway-1" value="2" checked="checked">
+      在线扫码支付
     </label>
   </div>
 </div>
@@ -259,6 +259,7 @@
   <label class="control-label" for="notice">店铺公告</label>
   <div class="controls">                     
     <textarea id="notice" name="notice" maxlength="100">小店开张，欢迎光临！</textarea>
+    <p class="help-block">可以描述一下需特殊说明的事项</p>
   </div>
 </div>
 
