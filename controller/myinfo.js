@@ -1,4 +1,4 @@
-////======== 我的信息 ========
+////======== 个人资料 ========
 
 let studentDao = require('../dao/sql/sql_dao/studentDao');
 

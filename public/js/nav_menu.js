@@ -122,7 +122,7 @@ $(function(){
 		window.location.href = "help"
 	});
 
-////======== 我的信息 ========
+////======== 个人资料 ========
 	$('#href_nav_2_myinfo_detail').click(function(){
 		window.location.href = "myinfo"
 	});
