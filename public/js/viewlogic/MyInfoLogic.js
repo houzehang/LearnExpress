@@ -74,10 +74,10 @@ define(function(){
           address: address
         }, function(data) {
           if (data.ok) {
-            alert('保存成功');
+            $.alert('保存成功!');
             onSaveSuccess();
           } else {
-            alert('保存失败');
+            $.alert('保存失败!');
           }
         })
       });
