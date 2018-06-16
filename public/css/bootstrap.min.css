@@ -947,6 +947,7 @@ fieldset {
     padding-top: 40px;
     border: 0;
     background: rgba(115, 115, 115, 0.05);
+    border-radius: 10px;
 }
 
 legend {
@@ -955,13 +956,14 @@ legend {
     font-size: 21px;
     line-height: 40px;
     height: 40px;
-    color: #333;
+    color: #7b7b7b;
     border: 0;
     border-bottom: 1px solid #e5e5e5;
-    background: inherit;
+    background: #fff;
     top: 20px;
     position: relative;
     padding: 0px 20px;
+    border-radius: 10px 10px 0 0;
 }
 
 legend small {

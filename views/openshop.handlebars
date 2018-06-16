@@ -15,7 +15,7 @@
 
 <!-- Text input-->
 <div class="control-group">
-  <label class="control-label" for="address">宿舍楼及门牌号</label>
+  <label class="control-label" for="address">宿舍号</label>
   <div class="controls">
     <input id="address" name="address" type="text" placeholder="如：男生宿舍2号楼1001" class="input-xlarge" required="">
     <p class="help-block">方便下单后送货上门，或开店后学生上门购买</p>
@@ -82,19 +82,12 @@
 
 <!-- Form Name -->
 <legend>我要开店</legend>
-<!-- Text input-->
-<div class="control-group">
-  <label class="control-label" for="schoolname">我的学校</label>
-  <div class="controls">
-    <input id="schoolname" name="schoolname" type="text" placeholder="点击选择" class="input-xlarge" required="" contenteditable="false">
-  </div>
-</div>
 
 <!-- Text input-->
 <div class="control-group">
   <label class="control-label" for="storenname">店铺名称</label>
   <div class="controls">
-    <input id="storenname" name="storenname" type="text" placeholder="如：提莫君零食店" class="input-xlarge" required="">
+    <input id="storenname" name="storenname" type="text" placeholder="如：提莫君零食店" class="input-xlarge" required="" maxlength="20">
     <p class="help-block">请使用合法的名称，建议名称具有意义</p>
   </div>
 </div>
@@ -268,7 +261,7 @@
   <label class="control-label" for="btn_ok"></label>
   <div class="controls">
     <button id="btn_ok" name="btn_ok" class="btn btn-success">立即拥有</button>
-    <button id="btn_abort" name="btn_abort" class="btn btn-danger">取消</button>
+    <button id="btn_abort" name="btn_abort" class="btn btn-danger" style="display: none;">取消</button>
   </div>
 </div>
 
