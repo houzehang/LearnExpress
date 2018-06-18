@@ -87,8 +87,9 @@ CREATE TABLE `shop` (
   `tradeway` varchar(20) DEFAULT NULL COMMENT '交易方式',
   `payway` varchar(20) DEFAULT NULL COMMENT '支付方式',
   `createtime` bigint(20) DEFAULT NULL COMMENT '创建时间',
-  PRIMARY KEY (`shopid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  PRIMARY KEY (`shopid`),
+  UNIQUE KEY `uid_DUPLICATE` (`uid`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -111,7 +112,7 @@ CREATE TABLE `student` (
   `createtime` bigint(20) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `uid_duplicate` (`uid`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -144,4 +145,4 @@ CREATE TABLE `user` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-06-16 17:53:16
+-- Dump completed on 2018-06-19  0:14:46
