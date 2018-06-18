@@ -2,6 +2,7 @@
 
 let shopDao = require('../dao/sql/sql_dao/shopDao');
 let studentDao = require('../dao/sql/sql_dao/studentDao');
+let globalConfig = require('../config/global_config');
 module.exports = function(app) {
 
 	let viewName = 'openshop';
@@ -40,7 +41,8 @@ module.exports = function(app) {
 			res.status(200);
 			let result = Object.assign({
 				uid: req.session.uid,
-				accountname: req.session.accountname
+				accountname: req.session.accountname,
+				kinds: globalConfig.goodskinds
 			}, student);
 			console.log('[get-result] ' + req.route.path + ' result :' + JSON.stringify(result));
 			res.render(viewName, result);
@@ -54,8 +56,8 @@ module.exports = function(app) {
 		let result = {};
 		let uid = req.session.uid;
 		let name = req.body.name;
-		let logo = req.body.logo;
-		let classstr = req.body.class;
+		let logo = req.body.icon;
+		let classstr = req.body.kinds;
 		let sid = req.body.sid;
 		let open = req.body.open;
 		let goodscount = req.body.goodscount;
@@ -65,6 +67,7 @@ module.exports = function(app) {
 		let carryfee = req.body.carryfee;
 		let people = req.body.people;
 		let tradeway = req.body.tradeway;
+		let payway = req.body.payway;
 		let createtime = Date.now();
 
 		////======== 2.验证 ========
@@ -76,7 +79,7 @@ module.exports = function(app) {
 
 		////======== 3.逻辑 ========
 		function createShop() {
-			return shopDao.createShop(uid, name, logo, classstr, sid, open, goodscount, notice, scope, carryprice, carryprice, people, tradeway, createtime).then(function(dbRes) {});
+			return shopDao.createShop(uid, name, logo, classstr, sid, open, goodscount, notice, scope, carryprice, carryfee, people, tradeway, payway, createtime).then(function(dbRes) {});
 		}
 
 		(async function() {

@@ -141,38 +141,12 @@
 <div class="control-group">
   <label class="control-label" for="">经营类目</label>
   <div class="controls">
-    <label class="checkbox" for="category-0">
-      <input type="checkbox" name="category" id="category-0" value="1" >
-      零食/饮料
-    </label>
-    <label class="checkbox" for="category-1">
-      <input type="checkbox" name="category" id="category-1" value="2" >
-      二手书
-    </label>
-    <label class="checkbox" for="category-2">
-      <input type="checkbox" name="category" id="category-2" value="3" >
-      交通工具
-    </label>
-    <label class="checkbox" for="category-3">
-      <input type="checkbox" name="category" id="category-3" value="4" >
-      生活用品
-    </label>
-    <label class="checkbox" for="category-4">
-      <input type="checkbox" name="category" id="category-4" value="5" >
-      电子产品
-    </label>
-    <label class="checkbox" for="category-5">
-      <input type="checkbox" name="category" id="category-5" value="6" >
-      代跑腿
-    </label>
-    <label class="checkbox" for="category-6">
-      <input type="checkbox" name="category" id="category-6" value="7" >
-      网上服务
-    </label>
-    <label class="checkbox" for="category-7">
-      <input type="checkbox" name="category" id="category-7" value="8" >
-      游戏代练
-    </label>
+    {{#each kinds}}
+      <label class="checkbox" for="category-kind-{{id}}">
+        <input type="checkbox" name="category" id="category-kind-{{id}}" value="{{id}}" onchange="selectKind(this)">
+        {{name}}
+      </label>
+    {{/each}}
   </div>
 </div>
 
@@ -180,12 +154,12 @@
 <div class="control-group">
   <label class="control-label" for="">服务对象</label>
   <div class="controls">
-    <label class="checkbox inline" for="sex-0">
-      <input type="checkbox" name="payway" id="sex-0" value="1" >
+    <label class="checkbox inline" for="people-1">
+      <input type="checkbox" name="people" id="people-1" value="1" onchange="selectPeople(this)">
       <i class="fa fa-mars">&nbsp;</i>男生
     </label>
-    <label class="checkbox inline" for="sex-1">
-      <input type="checkbox" name="payway" id="sex-1" value="2" >
+    <label class="checkbox inline" for="people-2">
+      <input type="checkbox" name="people" id="people-2" value="2" onchange="selectPeople(this)">
       <i class="fa fa-venus">&nbsp;</i>女生
     </label>
   </div>
@@ -195,12 +169,12 @@
 <div class="control-group">
   <label class="control-label" for="">交易方式</label>
   <div class="controls">
-    <label class="checkbox inline" for="tradeway-0">
-      <input type="checkbox" name="tradeway" id="tradeway-0" value="1">
+    <label class="checkbox inline" for="tradeway-1">
+      <input type="checkbox" name="tradeway" id="tradeway-1" value="1" onchange="selectTradeWay(this)">
       支持送货上门
     </label>
-    <label class="checkbox inline" for="tradeway-1">
-      <input type="checkbox" name="tradeway" id="tradeway-1" value="2">
+    <label class="checkbox inline" for="tradeway-2">
+      <input type="checkbox" name="tradeway" id="tradeway-2" value="2" onchange="selectTradeWay(this)">
       支持到店自取
     </label>
   </div>
@@ -236,11 +210,11 @@
   <label class="control-label" for="">支付方式</label>
   <div class="controls">
     <label class="checkbox inline" for="payway-0">
-      <input type="checkbox" name="payway" id="payway-0" value="1" checked="checked">
+      <input type="checkbox" name="payway" id="payway-0" value="1" onchange="selectPayWay(this)">
       支持当面支付
     </label>
     <label class="checkbox inline" for="payway-1">
-      <input type="checkbox" name="payway" id="payway-1" value="2" checked="checked">
+      <input type="checkbox" name="payway" id="payway-1" value="2" onchange="selectPayWay(this)">
       在线扫码支付
     </label>
   </div>
@@ -260,21 +234,23 @@
 <div class="control-group">
   <label class="control-label" for="btn_ok"></label>
   <div class="controls">
-    <button id="btn_ok" name="btn_ok" class="btn btn-success">立即拥有</button>
-    <button id="btn_abort" name="btn_abort" class="btn btn-danger" style="display: none;">取消</button>
+    <button id="btn_save_shop" class="btn btn-success">保存</button>
+    <button id="btn_abort_shop" class="btn btn-danger" style="display: none;">取消</button>
   </div>
 </div>
 
 </fieldset>
 </form>
 
-<script type="text/javascript">
+<script type="text/javascript"> 
   ////======== 选择店铺图标 ========
+  let selectedShopIconId = '';
   function selectShopIcon(item){
-    let itemId = item.getAttribute("id");
+    let itemVal = item.getAttribute("id");
     for(let i = 1; i <= 30; i++){
       let tmpId = 'shopicon_'+i;
-      if (itemId == tmpId) {
+      if (itemVal == tmpId) {
+        selectedShopIconId = itemVal;
         $('#'+tmpId).css("border", "5px solid #735353");
         $('#'+tmpId).css("width", "70px");
         $('#'+tmpId).css("height", "70px");
@@ -286,9 +262,95 @@
       }
     }
   }
+  ////======== 选择种类 ========
+  let selectedKindHash = {};
+  let selectedKindStr  = '';
+  function selectKind(item){
+    let itemVal = item.value;
+    selectedKindHash[itemVal] = item.checked;
+    let result = [];
+    for(let id in selectedKindHash){
+      if (selectedKindHash[id]) {
+        result.push(id);
+      }
+    }
+    selectedKindStr = result.join('|');
+  } 
+
+  ////======== 服务对象 ========
+  let selectedPepoleHash = {};
+  let selectedPeopleStr  = '';
+  function selectPeople(item){
+    let itemVal = item.value;
+    selectedPepoleHash[itemVal] = item.checked;
+    let result = [];
+    for(let id in selectedPepoleHash){
+      if (selectedPepoleHash[id]) {
+        result.push(id);
+      }
+    }
+    selectedPeopleStr = result.join('|');
+  }
+
+  ////======== 交易方式 ========
+  let selectedTradeWayHash = {};
+  let selectedTradeWayStr  = '';
+  function selectTradeWay(item){
+    let itemVal = item.value;
+    selectedTradeWayHash[itemVal] = item.checked;
+    let result = [];
+    for(let id in selectedTradeWayHash){
+      if (selectedTradeWayHash[id]) {
+        result.push(id);
+      }
+    }
+    selectedTradeWayStr = result.join('|');
+
+    if (item.checked) {
+      $('#control-group-carryprice').show();
+      $('#control-group-carryfee').show();
+      $('#control-group-scope').show();
+      $("#carryprice").focus();
+    }else{
+      $('#control-group-carryprice').hide();
+      $('#control-group-carryfee').hide();
+      $('#control-group-scope').hide();
+      $("#carryprice").blur();
+    }
+  }
+
+  if ($("#tradeway-1").is(':checked')) {
+    $('#control-group-carryprice').show();
+    $('#control-group-carryfee').show();
+    $('#control-group-scope').show();
+  }else{
+    $('#control-group-carryprice').hide();
+    $('#control-group-carryfee').hide();
+    $('#control-group-scope').hide();
+    $("#carryprice").blur();
+  }
+
+  ////======== 支付方式 ========
+  let selectedPayWayHash = {};
+  let selectedPayWayStr  = '';
+  function selectPayWay(item){
+    let itemVal = item.value;
+    selectedPayWayHash[itemVal] = item.checked;
+    let result = [];
+    for(let id in selectedPayWayHash){
+      if (selectedPayWayHash[id]) {
+        result.push(id);
+      }
+    }
+    selectedPayWayStr = result.join('|');
+    console.log(selectedPayWayStr);
+  }
+
   require(['js/viewlogic/OpenShopLogic'], function(handler){  
-    handler();
-  });  
+    handler({
+      sid:'{{sid}}',
+    });
+  }); 
 </script>
 
 
