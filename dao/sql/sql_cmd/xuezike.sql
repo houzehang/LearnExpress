@@ -2,9 +2,9 @@ CREATE DATABASE  IF NOT EXISTS `xuezike` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `xuezike`;
 -- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: xuezike
+-- Host: localhost    Database: xuezike
 -- ------------------------------------------------------
--- Server version	5.7.20-log
+-- Server version	5.7.18-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -76,7 +76,6 @@ CREATE TABLE `shop` (
   `name` varchar(64) DEFAULT NULL COMMENT '商店名称',
   `logo` varchar(255) DEFAULT NULL COMMENT '商店图标',
   `kinds` varchar(30) DEFAULT NULL COMMENT '商店经营类目',
-  `sid` int(10) DEFAULT NULL COMMENT '所在学校id',
   `open` smallint(6) DEFAULT NULL COMMENT '是否营业',
   `goodscount` varchar(255) DEFAULT NULL COMMENT '商品数量',
   `notice` varchar(255) DEFAULT NULL COMMENT '店铺公告',
@@ -112,7 +111,7 @@ CREATE TABLE `student` (
   `createtime` bigint(20) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `uid_duplicate` (`uid`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -133,7 +132,7 @@ CREATE TABLE `user` (
   UNIQUE KEY `email_UNIQUE` (`email`),
   UNIQUE KEY `phone_UNIQUE` (`phone`),
   UNIQUE KEY `username_UNIQUE` (`username`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8 COMMENT='用户信息表';
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8 COMMENT='用户信息表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -145,4 +144,4 @@ CREATE TABLE `user` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-06-19  0:14:46
+-- Dump completed on 2018-06-19 12:33:19

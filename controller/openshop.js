@@ -58,7 +58,6 @@ module.exports = function(app) {
 		let name = req.body.name;
 		let logo = req.body.icon;
 		let classstr = req.body.kinds;
-		let sid = req.body.sid;
 		let open = req.body.open;
 		let goodscount = req.body.goodscount;
 		let notice = req.body.notice;
@@ -79,7 +78,7 @@ module.exports = function(app) {
 
 		////======== 3.逻辑 ========
 		function createShop() {
-			return shopDao.createShop(uid, name, logo, classstr, sid, open, goodscount, notice, scope, carryprice, carryfee, people, tradeway, payway, createtime).then(function(dbRes) {});
+			return shopDao.createShop(uid, name, logo, classstr, open, goodscount, notice, scope, carryprice, carryfee, people, tradeway, payway, createtime).then(function(dbRes) {});
 		}
 
 		(async function() {
