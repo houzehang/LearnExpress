@@ -12340,7 +12340,6 @@ function getSchoolNameBySid(sid){
             let schools = schoolList[i].school;
             for(let j = 0, len2 = schools.length;j < len2; j++){
                 if (sid == schools[j].id) {
-                    console.log(schools[j].name);
                     return schools[j].name;
                 }
             }

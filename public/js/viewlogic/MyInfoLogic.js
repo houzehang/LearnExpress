@@ -98,7 +98,6 @@ define(function(){
       $('#address').val(body.address);
       $('#nickname').val(body.nickname);
 
-      $("#myinfofield").fadeIn();
     });
   }
 });

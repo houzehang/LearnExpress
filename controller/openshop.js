@@ -28,12 +28,29 @@ module.exports = function(app) {
 			return studentDao.getStudentByUid(uid).then(function(dbRes) {
 				if (dbRes && dbRes.length > 0) {
 					student = dbRes[0];
+					student.studentcreatetime = student.createtime;
+					delete student.createtime;
+				}
+			});
+		}
+
+		let shop = {};
+
+		function getShopByUid(uid) {
+			return shopDao.getShopByUid(uid).then(function(dbRes) {
+				if (dbRes && dbRes.length > 0) {
+					shop = dbRes[0];
+					shop.shopname = shop.name;
+					shop.shopcreatetime = shop.createtime;
+					delete shop.name;
+					delete shop.createtime;
 				}
 			});
 		}
 		(async function() {
 			try {
 				await getStudentByUid(uid);
+				await getShopByUid(uid);
 			} catch (error) {
 				let errMsg = error.message || error;
 				console.log('[get-error-msg] ' + req.route.path + 'error:' + errMsg);
@@ -42,8 +59,8 @@ module.exports = function(app) {
 			let result = Object.assign({
 				uid: req.session.uid,
 				accountname: req.session.accountname,
-				kinds: globalConfig.goodskinds
-			}, student);
+				allkinds: globalConfig.goodskinds
+			}, student, shop);
 			console.log('[get-result] ' + req.route.path + ' result :' + JSON.stringify(result));
 			res.render(viewName, result);
 		})()

@@ -97,41 +97,22 @@
   <label class="control-label" for="logo">店铺logo</label>
   <div class="controls" >
     <input style="display: none;" id="logo" name="logo" class="input-file" type="file">
+    {{#if logo}}
+    <img id="shopicon_0" ondragstart="return false;" src="/img/shopicons/shopicon_{{logo}}.jpg" style="width: 120px;height: 120px;background: #ddd;margin-left: 5px" />
+    {{else}}
     <img id="shopicon_0" ondragstart="return false;" src="/img/shopicons/shopicon_1.jpg" style="width: 120px;height: 120px;background: #ddd;margin-left: 5px" />
+    {{/if}}
     <div class="wrapper" id="wrapper1">
       <div class="scroller">
-        <ul class="clearfix">
-          <li><img id="shopicon_1" onclick="selectShopIcon(this)" ondragstart="return false;" src="/img/shopicons/shopicon_1.jpg" style="width: 70px;height: 70px;background: #ddd; border: 5px solid #735353" /></li>
-          <li><img id="shopicon_2" onclick="selectShopIcon(this)" ondragstart="return false;" src="/img/shopicons/shopicon_2.jpg" style="width: 80px;height: 80px;background: #ddd;" /></li>
-          <li><img id="shopicon_3" onclick="selectShopIcon(this)" ondragstart="return false;" src="/img/shopicons/shopicon_3.jpg" style="width: 80px;height: 80px;background: #ddd;" /></li>
-          <li><img id="shopicon_4" onclick="selectShopIcon(this)" ondragstart="return false;" src="/img/shopicons/shopicon_4.jpg" style="width: 80px;height: 80px;background: #ddd;" /></li>
-          <li><img id="shopicon_5" onclick="selectShopIcon(this)" ondragstart="return false;" src="/img/shopicons/shopicon_5.jpg" style="width: 80px;height: 80px;background: #ddd;" /></li>
-          <li><img id="shopicon_6" onclick="selectShopIcon(this)" ondragstart="return false;" src="/img/shopicons/shopicon_6.jpg" style="width: 80px;height: 80px;background: #ddd;" /></li>
-          <li><img id="shopicon_7" onclick="selectShopIcon(this)" ondragstart="return false;" src="/img/shopicons/shopicon_7.jpg" style="width: 80px;height: 80px;background: #ddd;" /></li>
-          <li><img id="shopicon_8" onclick="selectShopIcon(this)" ondragstart="return false;" src="/img/shopicons/shopicon_8.jpg" style="width: 80px;height: 80px;background: #ddd;" /></li>
-          <li><img id="shopicon_9" onclick="selectShopIcon(this)" ondragstart="return false;" src="/img/shopicons/shopicon_9.jpg" style="width: 80px;height: 80px;background: #ddd;" /></li>
-          <li><img id="shopicon_10" onclick="selectShopIcon(this)" ondragstart="return false;" src="/img/shopicons/shopicon_10.jpg" style="width: 80px;height: 80px;background: #ddd;" /></li>
-          <li><img id="shopicon_11" onclick="selectShopIcon(this)" ondragstart="return false;" src="/img/shopicons/shopicon_11.jpg" style="width: 80px;height: 80px;background: #ddd;" /></li>
-          <li><img id="shopicon_12" onclick="selectShopIcon(this)" ondragstart="return false;" src="/img/shopicons/shopicon_12.jpg" style="width: 80px;height: 80px;background: #ddd;" /></li>
-          <li><img id="shopicon_13" onclick="selectShopIcon(this)" ondragstart="return false;" src="/img/shopicons/shopicon_13.jpg" style="width: 80px;height: 80px;background: #ddd;" /></li>
-          <li><img id="shopicon_14" onclick="selectShopIcon(this)" ondragstart="return false;" src="/img/shopicons/shopicon_14.jpg" style="width: 80px;height: 80px;background: #ddd;" /></li>
-          <li><img id="shopicon_15" onclick="selectShopIcon(this)" ondragstart="return false;" src="/img/shopicons/shopicon_15.jpg" style="width: 80px;height: 80px;background: #ddd;" /></li>
-          <li><img id="shopicon_16" onclick="selectShopIcon(this)" ondragstart="return false;" src="/img/shopicons/shopicon_16.jpg" style="width: 80px;height: 80px;background: #ddd;" /></li>
-          <li><img id="shopicon_17" onclick="selectShopIcon(this)" ondragstart="return false;" src="/img/shopicons/shopicon_17.jpg" style="width: 80px;height: 80px;background: #ddd;" /></li>
-          <li><img id="shopicon_18" onclick="selectShopIcon(this)" ondragstart="return false;" src="/img/shopicons/shopicon_18.jpg" style="width: 80px;height: 80px;background: #ddd;" /></li>
-          <li><img id="shopicon_19" onclick="selectShopIcon(this)" ondragstart="return false;" src="/img/shopicons/shopicon_19.jpg" style="width: 80px;height: 80px;background: #ddd;" /></li>
-          <li><img id="shopicon_20" onclick="selectShopIcon(this)" ondragstart="return false;" src="/img/shopicons/shopicon_20.jpg" style="width: 80px;height: 80px;background: #ddd;" /></li>
-          <li><img id="shopicon_21" onclick="selectShopIcon(this)" ondragstart="return false;" src="/img/shopicons/shopicon_21.jpg" style="width: 80px;height: 80px;background: #ddd;" /></li>
-          <li><img id="shopicon_22" onclick="selectShopIcon(this)" ondragstart="return false;" src="/img/shopicons/shopicon_22.jpg" style="width: 80px;height: 80px;background: #ddd;" /></li>
-          <li><img id="shopicon_23" onclick="selectShopIcon(this)" ondragstart="return false;" src="/img/shopicons/shopicon_23.jpg" style="width: 80px;height: 80px;background: #ddd;" /></li>
-          <li><img id="shopicon_24" onclick="selectShopIcon(this)" ondragstart="return false;" src="/img/shopicons/shopicon_24.jpg" style="width: 80px;height: 80px;background: #ddd;" /></li>
-          <li><img id="shopicon_25" onclick="selectShopIcon(this)" ondragstart="return false;" src="/img/shopicons/shopicon_25.jpg" style="width: 80px;height: 80px;background: #ddd;" /></li>
-          <li><img id="shopicon_26" onclick="selectShopIcon(this)" ondragstart="return false;" src="/img/shopicons/shopicon_26.jpg" style="width: 80px;height: 80px;background: #ddd;" /></li>
-          <li><img id="shopicon_27" onclick="selectShopIcon(this)" ondragstart="return false;" src="/img/shopicons/shopicon_27.jpg" style="width: 80px;height: 80px;background: #ddd;" /></li>
-          <li><img id="shopicon_28" onclick="selectShopIcon(this)" ondragstart="return false;" src="/img/shopicons/shopicon_28.jpg" style="width: 80px;height: 80px;background: #ddd;" /></li>
-          <li><img id="shopicon_29" onclick="selectShopIcon(this)" ondragstart="return false;" src="/img/shopicons/shopicon_29.jpg" style="width: 80px;height: 80px;background: #ddd;" /></li>
-          <li><img id="shopicon_30" onclick="selectShopIcon(this)" ondragstart="return false;" src="/img/shopicons/shopicon_30.jpg" style="width: 80px;height: 80px;background: #ddd;" /></li>
+        <ul id="shopicons" class="clearfix">
         </ul>
+        <script type="text/javascript">
+          let imgs = '';
+          for(let i = 1; i <= 30; i++){
+            imgs += '<li><img id="shopicon_'+i+'" onclick="selectShopIcon(this)" ondragstart="return false;" src="/img/shopicons/shopicon_'+i+'.jpg" style="width: 80px;height: 80px;background: #ddd;" /></li>'
+          }
+          $('#shopicons').html(imgs);
+        </script>
       </div>
     </div>
   </div>
@@ -141,7 +122,7 @@
 <div class="control-group">
   <label class="control-label" for="">经营类目</label>
   <div class="controls">
-    {{#each kinds}}
+    {{#each allkinds}}
       <label class="checkbox" for="category-kind-{{id}}">
         <input type="checkbox" name="category" id="category-kind-{{id}}" value="{{id}}" onchange="selectKind(this)">
         {{name}}
@@ -209,13 +190,13 @@
 <div class="control-group">
   <label class="control-label" for="">支付方式</label>
   <div class="controls">
-    <label class="checkbox inline" for="payway-0">
-      <input type="checkbox" name="payway" id="payway-0" value="1" onchange="selectPayWay(this)">
+    <label class="checkbox inline" for="payway-1">
+      <input type="checkbox" name="payway" id="payway-1" value="1" onchange="selectPayWay(this)">
       支持当面支付
     </label>
-    <label class="checkbox inline" for="payway-1">
-      <input type="checkbox" name="payway" id="payway-1" value="2" onchange="selectPayWay(this)">
-      在线扫码支付
+    <label class="checkbox inline" for="payway-2">
+      <input type="checkbox" name="payway" id="payway-2" value="2" onchange="selectPayWay(this)">
+      支持在线扫码
     </label>
   </div>
 </div>
@@ -234,7 +215,7 @@
 <div class="control-group">
   <label class="control-label" for="btn_ok"></label>
   <div class="controls">
-    <button id="btn_save_shop" class="btn btn-success">保存</button>
+    <button id="btn_save_shop" class="btn btn-success" disabled="true">保存</button>
     <button id="btn_abort_shop" class="btn btn-danger" style="display: none;">取消</button>
   </div>
 </div>
@@ -243,14 +224,15 @@
 </form>
 
 <script type="text/javascript"> 
+
   ////======== 选择店铺图标 ========
   let selectedShopIconId = '';
-  function selectShopIcon(item){
+  function selectShopIcon(item,isInit){
     let itemVal = item.getAttribute("id");
     for(let i = 1; i <= 30; i++){
       let tmpId = 'shopicon_'+i;
       if (itemVal == tmpId) {
-        selectedShopIconId = itemVal;
+        selectedShopIconId = (itemVal.toString().match(/\d+/) || [])[0] || 1;
         $('#'+tmpId).css("border", "5px solid #735353");
         $('#'+tmpId).css("width", "70px");
         $('#'+tmpId).css("height", "70px");
@@ -261,11 +243,12 @@
         $('#'+tmpId).css("height", "80px");
       }
     }
+    checkShopChanged(isInit);
   }
   ////======== 选择种类 ========
   let selectedKindHash = {};
   let selectedKindStr  = '';
-  function selectKind(item){
+  function selectKind(item,isInit){
     let itemVal = item.value;
     selectedKindHash[itemVal] = item.checked;
     let result = [];
@@ -275,12 +258,13 @@
       }
     }
     selectedKindStr = result.join('|');
+    checkShopChanged(isInit);
   } 
 
   ////======== 服务对象 ========
   let selectedPepoleHash = {};
   let selectedPeopleStr  = '';
-  function selectPeople(item){
+  function selectPeople(item,isInit){
     let itemVal = item.value;
     selectedPepoleHash[itemVal] = item.checked;
     let result = [];
@@ -290,12 +274,13 @@
       }
     }
     selectedPeopleStr = result.join('|');
+    checkShopChanged(isInit);
   }
 
   ////======== 交易方式 ========
   let selectedTradeWayHash = {};
   let selectedTradeWayStr  = '';
-  function selectTradeWay(item){
+  function selectTradeWay(item,isInit){
     let itemVal = item.value;
     selectedTradeWayHash[itemVal] = item.checked;
     let result = [];
@@ -306,17 +291,20 @@
     }
     selectedTradeWayStr = result.join('|');
 
-    if (item.checked) {
-      $('#control-group-carryprice').show();
-      $('#control-group-carryfee').show();
-      $('#control-group-scope').show();
-      $("#carryprice").focus();
-    }else{
-      $('#control-group-carryprice').hide();
-      $('#control-group-carryfee').hide();
-      $('#control-group-scope').hide();
-      $("#carryprice").blur();
+    if (item.id == 'tradeway-1') {
+      if (item.checked) {
+        $('#control-group-carryprice').show();
+        $('#control-group-carryfee').show();
+        $('#control-group-scope').show();
+        // $("#carryprice").focus();
+      }else{
+        $('#control-group-carryprice').hide();
+        $('#control-group-carryfee').hide();
+        $('#control-group-scope').hide();
+        $("#carryprice").blur();
+      }
     }
+    checkShopChanged(isInit);
   }
 
   if ($("#tradeway-1").is(':checked')) {
@@ -333,7 +321,7 @@
   ////======== 支付方式 ========
   let selectedPayWayHash = {};
   let selectedPayWayStr  = '';
-  function selectPayWay(item){
+  function selectPayWay(item,isInit){
     let itemVal = item.value;
     selectedPayWayHash[itemVal] = item.checked;
     let result = [];
@@ -343,11 +331,102 @@
       }
     }
     selectedPayWayStr = result.join('|');
-    console.log(selectedPayWayStr);
+    checkShopChanged(isInit);
   }
 
+  ////======== 最初数据 ========
+  var orgStorename = '{{shopname}}';
+  var orgLogo = '{{logo}}';
+  var orgKinds = '{{kinds}}';
+  var orgPeople = '{{people}}';
+  var orgTradeway = '{{tradeway}}';
+  var orgPayway = '{{payway}}';
+  var orgCarryprice = '{{carryprice}}';
+  var orgCarryfee = '{{carryfee}}';
+  var orgScope = '{{scope}}';
+  var orgNotice = '{{notice}}';
+  function checkShopChanged(isInit){
+    if (isInit) {
+      return;
+    }
+    if (orgStorename != $('#storenname').val() || orgLogo != selectedShopIconId || orgKinds != selectedKindStr || orgPeople != selectedPeopleStr || orgTradeway != selectedTradeWayStr || orgPayway != selectedPayWayStr || orgCarryprice != ($("#carryprice").val().match(/\d+/) ? $("#carryprice").val().match(/\d+/)[0] : 0) || orgCarryfee != ($("#carryfee").val().match(/\d+/) ? $("#carryfee").val().match(/\d+/)[0] : 0) || orgScope != $('#scope').val() || orgNotice != $('#notice').val()) {
+      $('#btn_save_shop').removeAttr("disabled"); 
+      $('#btn_abort_shop').show(); 
+    }else{
+      $('#btn_save_shop').attr("disabled","disabled"); 
+      $('#btn_abort_shop').hide(); 
+    }
+  }
+
+  ////======== 取消保存 ========
+  function updateShopLayer(isInit,orgStorename,orgLogo,orgKinds,orgPeople,orgTradeway,orgPayway,orgCarryprice,orgCarryfee,orgScope,orgNotice){
+
+      $("input[type=checkbox]").each(function(){ //循环checkbox选择或取消
+        $(this).prop("checked",false);
+      })
+      selectedKindHash = {};
+      selectedKindStr = '';
+      selectedPepoleHash = {};
+      selectedPeopleStr = '';
+      selectedTradeWayHash = {};
+      selectedTradeWayStr = '';
+      selectedPayWayHash = {};
+      selectedPayWayStr = '';
+
+      orgStorename && $('#storenname').val(orgStorename);
+      orgLogo && selectShopIcon(document.getElementById('shopicon_' + orgLogo),isInit);
+      orgKinds && orgKinds.split('|').map(function(item, index) {
+        $('#category-kind-' + item).prop({
+          checked: true
+        });
+        selectKind(document.getElementById('category-kind-' + item),isInit);
+      });
+      orgPeople && orgPeople.split('|').map(function(item, index) {
+        $('#people-' + item).prop({
+          checked: true
+        });
+        selectPeople(document.getElementById('people-' + item),isInit);
+      });
+
+      orgTradeway && orgTradeway.split('|').map(function(item, index) {
+        $('#tradeway-' + item).prop({
+          checked: true
+        });
+        selectTradeWay(document.getElementById('tradeway-' + item),isInit);
+      });
+      orgPayway && orgPayway.split('|').map(function(item, index) {
+        $('#payway-' + item).prop({
+          checked: true
+        });
+        selectPayWay(document.getElementById('payway-' + item),isInit);
+      });
+      $('#carryprice').val('￥'+(orgCarryprice||0));
+      $('#carryfee').val('￥'+(orgCarryfee||0));
+      orgScope && $('#scope').val(orgScope);
+      orgNotice && $('#notice').val(orgNotice);
+  }
+  $('#btn_abort_shop').click(function() {
+    window.event.returnValue = false;
+    updateShopLayer(false,orgStorename,orgLogo,orgKinds,orgPeople,orgTradeway,orgPayway,orgCarryprice,orgCarryfee,orgScope,orgNotice);
+    checkShopChanged(false);
+  });
+
+  ////======== 引用外部逻辑 ========
   require(['js/viewlogic/OpenShopLogic'], function(handler){  
-    handler();
+    handler({
+      kinds : '{{kinds}}',
+      storenname : '{{shopname}}',
+      logo : '{{logo}}',
+      open : '{{open}}',
+      notice : '{{notice}}',
+      scope : '{{scope}}',
+      carryprice : '{{carryprice}}',
+      carryfee : '{{carryfee}}',
+      people : '{{people}}',
+      tradeway : '{{tradeway}}',
+      payway : '{{payway}}',
+      shopcreatetime : '{{shopcreatetime}}'
+    });
   }); 
 </script>
 
