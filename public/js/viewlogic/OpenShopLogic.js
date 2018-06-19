@@ -72,7 +72,6 @@ define(function() {
           name: storenname,
           icon: icon,
           kinds: kinds,
-          sid: body.sid,
           open: open,
           notice: notice,
           scope: scope,
