@@ -126,6 +126,9 @@
       <label class="checkbox sublabel" for="category-kind-{{id}}">
         <input type="checkbox" name="category" id="category-kind-{{id}}" value="{{id}}" onchange="selectKind(this)">
         {{name}}
+        <a href="#" style="display: inline-block; float: right;color: #124964;" onclick="mggoods('{{id}}')">
+          <i class="fa fa-edit">&nbsp;</i>管理商品
+        </a>
       </label>
     {{/each}}
   </div>
@@ -416,6 +419,9 @@
     checkShopChanged(false);
   });
 
+  ////======== 商品管理 ========
+  function mggoods(id){
+  }
   ////======== 引用外部逻辑 ========
   require(['js/viewlogic/MyShopLogic'], function(handler){  
     handler({
