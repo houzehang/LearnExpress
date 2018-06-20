@@ -77,11 +77,11 @@
 <script type="text/javascript" src="plugin/iscroll/iscroll.js"></script>
 <script type="text/javascript" src="plugin/iscroll/navbarscroll.js"></script>
  -->
-<form id="openshopform" class="form-horizontal" >
+<form id="myshopform" class="form-horizontal" >
 <fieldset id="openshopfield">
 
 <!-- Form Name -->
-<legend>我要开店</legend>
+<legend>我的店铺</legend>
 
 <!-- Text input-->
 <div class="control-group">
@@ -123,7 +123,7 @@
   <label class="control-label" for="">经营类目</label>
   <div class="controls">
     {{#each allkinds}}
-      <label class="checkbox" for="category-kind-{{id}}">
+      <label class="checkbox sublabel" for="category-kind-{{id}}">
         <input type="checkbox" name="category" id="category-kind-{{id}}" value="{{id}}" onchange="selectKind(this)">
         {{name}}
       </label>
@@ -336,13 +336,13 @@
 
   ////======== 最初数据 ========
   var orgStorename = '{{shopname}}';
-  var orgLogo = '{{logo}}';
+  var orgLogo = '{{logo}}' || 1;
   var orgKinds = '{{kinds}}';
   var orgPeople = '{{people}}';
   var orgTradeway = '{{tradeway}}';
   var orgPayway = '{{payway}}';
-  var orgCarryprice = '{{carryprice}}';
-  var orgCarryfee = '{{carryfee}}';
+  var orgCarryprice = '{{carryprice}}' || 0;
+  var orgCarryfee = '{{carryfee}}' || 0;
   var orgScope = '{{scope}}';
   var orgNotice = '{{notice}}';
   function checkShopChanged(isInit){
@@ -364,6 +364,7 @@
       $("input[type=checkbox]").each(function(){ //循环checkbox选择或取消
         $(this).prop("checked",false);
       })
+      selectedShopIconId = ''
       selectedKindHash = {};
       selectedKindStr = '';
       selectedPepoleHash = {};
@@ -372,8 +373,12 @@
       selectedTradeWayStr = '';
       selectedPayWayHash = {};
       selectedPayWayStr = '';
+      $('#control-group-carryprice').hide();
+      $('#control-group-carryfee').hide();
+      $('#control-group-scope').hide();
+      $("#carryprice").blur();
 
-      orgStorename && $('#storenname').val(orgStorename);
+      $('#storenname').val(orgStorename||'');
       orgLogo && selectShopIcon(document.getElementById('shopicon_' + orgLogo),isInit);
       orgKinds && orgKinds.split('|').map(function(item, index) {
         $('#category-kind-' + item).prop({
@@ -402,8 +407,8 @@
       });
       $('#carryprice').val('￥'+(orgCarryprice||0));
       $('#carryfee').val('￥'+(orgCarryfee||0));
-      orgScope && $('#scope').val(orgScope);
-      orgNotice && $('#notice').val(orgNotice);
+      $('#scope').val(orgScope||'');
+      $('#notice').val(orgNotice||'');
   }
   $('#btn_abort_shop').click(function() {
     window.event.returnValue = false;
@@ -412,16 +417,16 @@
   });
 
   ////======== 引用外部逻辑 ========
-  require(['js/viewlogic/OpenShopLogic'], function(handler){  
+  require(['js/viewlogic/MyShopLogic'], function(handler){  
     handler({
       kinds : '{{kinds}}',
       storenname : '{{shopname}}',
-      logo : '{{logo}}',
+      logo : '{{logo}}' || 1,
       open : '{{open}}',
       notice : '{{notice}}',
       scope : '{{scope}}',
-      carryprice : '{{carryprice}}',
-      carryfee : '{{carryfee}}',
+      carryprice : '{{carryprice}}' || 0,
+      carryfee : '{{carryfee}}' || 0,
       people : '{{people}}',
       tradeway : '{{tradeway}}',
       payway : '{{payway}}',

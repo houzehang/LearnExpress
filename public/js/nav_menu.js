@@ -47,7 +47,7 @@ $(function(){
 
 
 	$('#href_nav_2_trade_open_shop').click(function(){
-		window.location.href = "openshop"
+		window.location.href = "myshop"
 	});
 	$('#href_nav_2_trade_mg_shop').click(function(){
 		window.location.href = "mgshop"

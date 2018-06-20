@@ -3,7 +3,7 @@ module.exports = {
 	viewsNeedVerifing : [
 		'home'
 		,'about'
-		,'openshop'
+		,'myshop'
 		,'myinfo'
 	]
 }
