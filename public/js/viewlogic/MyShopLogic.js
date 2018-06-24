@@ -57,6 +57,7 @@ define(function() {
 
       ////======== 点击保存 ========
       $('#btn_save_shop').click(function() {
+        window.event.preventDefault();
         window.event.returnValue = false;
         ////======== 1.收集数据 ========
         var storenname = $('#storenname').val();

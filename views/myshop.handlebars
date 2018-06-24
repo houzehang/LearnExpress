@@ -414,6 +414,7 @@
       $('#notice').val(orgNotice||'');
   }
   $('#btn_abort_shop').click(function() {
+    window.event.preventDefault();
     window.event.returnValue = false;
     updateShopLayer(false,orgStorename,orgLogo,orgKinds,orgPeople,orgTradeway,orgPayway,orgCarryprice,orgCarryfee,orgScope,orgNotice);
     checkShopChanged(false);

@@ -51,6 +51,7 @@ define(function(){
 
       ////======== 保存 ========
       $('#btn_save').click(function() {
+        window.event.preventDefault();
         window.event.returnValue = false;
         ////======== 表单验证 ========
         var name = $('#nickname').val();
@@ -83,6 +84,7 @@ define(function(){
       });
       ////======== 取消保存 ========
       $('#btn_abort').click(function() {
+        window.event.preventDefault();
         window.event.returnValue = false;
         mySchoolId = orgSid;
         $('#schoolname').val(getSchoolNameBySid(orgSid));

@@ -946,20 +946,20 @@ fieldset {
     margin: 0;
     padding-top: 40px;
     border: 0;
-    background: rgba(115, 115, 115, 0.05);
+    background: #fff;
     border-radius: 10px;
 }
 
 legend {
     display: block;
     width: calc(100% - 40px);
-    font-size: 21px;
+    font-size: 15px;
     line-height: 40px;
     height: 40px;
-    color: #7b7b7b;
+    color: #FFF;
     border: 0;
     border-bottom: 1px solid #e5e5e5;
-    background: #fff;
+    background: #636363;
     top: 20px;
     position: relative;
     padding: 0px 20px;
@@ -984,6 +984,7 @@ input,button,select,textarea {
 label {
 	display: block;
 	margin-bottom: 5px;
+	font-weight: bold;
 }
 .sublabel {
 	width: 200px;
@@ -1157,7 +1158,8 @@ input[class*="span"],select[class*="span"],textarea[class*="span"],.uneditable-i
 }
 
 input,textarea,.uneditable-input {
-	margin-left: 0
+	margin-left: 0;
+	font-weight:bold;
 }
 
 .controls-row [class*="span"]+[class*="span"] {

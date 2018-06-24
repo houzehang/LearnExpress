@@ -144,6 +144,7 @@ body.jconfirm-noscroll {
   -webkit-transition: all 0.2s ease-in;
           transition: all 0.2s ease-in;
   right: 0;
+  font-weight:bold;
 }
 .jconfirm .jconfirm-box div.content-pane .content img {
   width: 100%;
